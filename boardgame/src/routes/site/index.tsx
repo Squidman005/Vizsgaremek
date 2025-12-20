@@ -1,21 +1,26 @@
-import { createFileRoute, useNavigate } from '@tanstack/react-router'
+
+import { createFileRoute } from '@tanstack/react-router';
+import { decodeJWT } from '@/lib/decode-JWT';
+import { LogoutButton } from '@/lib/logout';
+import { Button } from '@/components/ui/button';
 
 export const Route = createFileRoute('/site/')({
-  component: RouteComponent,
-})
+  loader: decodeJWT, // async loader
+  component: SiteComponent,
+  notFoundComponent: () => <p>Page not found!</p>,
+});
 
-import { Button } from "@/components/ui/button"
+function SiteComponent() {
+  const { user, loading } = Route.useLoaderData();
 
-import { decodeJWT } from "@/lib/decode-JWT"
+  if (loading) return <p>Loading...</p>;
 
-function RouteComponent() {
-  const navigate = useNavigate();
-  const user = decodeJWT();
-  console.log(user);
-  return (<>
-    <Button>Új szoba</Button>
-    <Button onClick={() => navigate({
-      to: "/site/myuser"
-    })}>Saját felhasználó megtekintése</Button>
-  </>)
+  return (
+    <>
+      <p>Welcome, {user.username}</p>
+      <Button>Új szoba</Button>
+      <Button>Saját felhasználó megtekintése</Button>
+      <LogoutButton />
+    </>
+  );
 }
