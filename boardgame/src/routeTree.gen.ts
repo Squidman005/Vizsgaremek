@@ -14,9 +14,11 @@ import { Route as LoginRouteImport } from './routes/login'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as SiteIndexRouteImport } from './routes/site/index'
 import { Route as SiteMyuserRouteImport } from './routes/site/myuser'
+import { Route as SiteAboutRouteImport } from './routes/site/about'
 import { Route as DemoTanstackQueryRouteImport } from './routes/demo/tanstack-query'
 import { Route as DemoTableRouteImport } from './routes/demo/table'
 import { Route as DemoStoreRouteImport } from './routes/demo/store'
+import { Route as SiteGamesFlappyBirdRouteImport } from './routes/site/games/flappy-bird'
 import { Route as DemoStartServerFuncsRouteImport } from './routes/demo/start.server-funcs'
 import { Route as DemoStartApiRequestRouteImport } from './routes/demo/start.api-request'
 import { Route as DemoFormSimpleRouteImport } from './routes/demo/form.simple'
@@ -53,6 +55,11 @@ const SiteMyuserRoute = SiteMyuserRouteImport.update({
   path: '/site/myuser',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SiteAboutRoute = SiteAboutRouteImport.update({
+  id: '/site/about',
+  path: '/site/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const DemoTanstackQueryRoute = DemoTanstackQueryRouteImport.update({
   id: '/demo/tanstack-query',
   path: '/demo/tanstack-query',
@@ -66,6 +73,11 @@ const DemoTableRoute = DemoTableRouteImport.update({
 const DemoStoreRoute = DemoStoreRouteImport.update({
   id: '/demo/store',
   path: '/demo/store',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SiteGamesFlappyBirdRoute = SiteGamesFlappyBirdRouteImport.update({
+  id: '/site/games/flappy-bird',
+  path: '/site/games/flappy-bird',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DemoStartServerFuncsRoute = DemoStartServerFuncsRouteImport.update({
@@ -126,6 +138,7 @@ export interface FileRoutesByFullPath {
   '/demo/store': typeof DemoStoreRoute
   '/demo/table': typeof DemoTableRoute
   '/demo/tanstack-query': typeof DemoTanstackQueryRoute
+  '/site/about': typeof SiteAboutRoute
   '/site/myuser': typeof SiteMyuserRoute
   '/site': typeof SiteIndexRoute
   '/demo/api/names': typeof DemoApiNamesRoute
@@ -134,6 +147,7 @@ export interface FileRoutesByFullPath {
   '/demo/form/simple': typeof DemoFormSimpleRoute
   '/demo/start/api-request': typeof DemoStartApiRequestRoute
   '/demo/start/server-funcs': typeof DemoStartServerFuncsRoute
+  '/site/games/flappy-bird': typeof SiteGamesFlappyBirdRoute
   '/demo/start/ssr/data-only': typeof DemoStartSsrDataOnlyRoute
   '/demo/start/ssr/full-ssr': typeof DemoStartSsrFullSsrRoute
   '/demo/start/ssr/spa-mode': typeof DemoStartSsrSpaModeRoute
@@ -146,6 +160,7 @@ export interface FileRoutesByTo {
   '/demo/store': typeof DemoStoreRoute
   '/demo/table': typeof DemoTableRoute
   '/demo/tanstack-query': typeof DemoTanstackQueryRoute
+  '/site/about': typeof SiteAboutRoute
   '/site/myuser': typeof SiteMyuserRoute
   '/site': typeof SiteIndexRoute
   '/demo/api/names': typeof DemoApiNamesRoute
@@ -154,6 +169,7 @@ export interface FileRoutesByTo {
   '/demo/form/simple': typeof DemoFormSimpleRoute
   '/demo/start/api-request': typeof DemoStartApiRequestRoute
   '/demo/start/server-funcs': typeof DemoStartServerFuncsRoute
+  '/site/games/flappy-bird': typeof SiteGamesFlappyBirdRoute
   '/demo/start/ssr/data-only': typeof DemoStartSsrDataOnlyRoute
   '/demo/start/ssr/full-ssr': typeof DemoStartSsrFullSsrRoute
   '/demo/start/ssr/spa-mode': typeof DemoStartSsrSpaModeRoute
@@ -167,6 +183,7 @@ export interface FileRoutesById {
   '/demo/store': typeof DemoStoreRoute
   '/demo/table': typeof DemoTableRoute
   '/demo/tanstack-query': typeof DemoTanstackQueryRoute
+  '/site/about': typeof SiteAboutRoute
   '/site/myuser': typeof SiteMyuserRoute
   '/site/': typeof SiteIndexRoute
   '/demo/api/names': typeof DemoApiNamesRoute
@@ -175,6 +192,7 @@ export interface FileRoutesById {
   '/demo/form/simple': typeof DemoFormSimpleRoute
   '/demo/start/api-request': typeof DemoStartApiRequestRoute
   '/demo/start/server-funcs': typeof DemoStartServerFuncsRoute
+  '/site/games/flappy-bird': typeof SiteGamesFlappyBirdRoute
   '/demo/start/ssr/data-only': typeof DemoStartSsrDataOnlyRoute
   '/demo/start/ssr/full-ssr': typeof DemoStartSsrFullSsrRoute
   '/demo/start/ssr/spa-mode': typeof DemoStartSsrSpaModeRoute
@@ -189,6 +207,7 @@ export interface FileRouteTypes {
     | '/demo/store'
     | '/demo/table'
     | '/demo/tanstack-query'
+    | '/site/about'
     | '/site/myuser'
     | '/site'
     | '/demo/api/names'
@@ -197,6 +216,7 @@ export interface FileRouteTypes {
     | '/demo/form/simple'
     | '/demo/start/api-request'
     | '/demo/start/server-funcs'
+    | '/site/games/flappy-bird'
     | '/demo/start/ssr/data-only'
     | '/demo/start/ssr/full-ssr'
     | '/demo/start/ssr/spa-mode'
@@ -209,6 +229,7 @@ export interface FileRouteTypes {
     | '/demo/store'
     | '/demo/table'
     | '/demo/tanstack-query'
+    | '/site/about'
     | '/site/myuser'
     | '/site'
     | '/demo/api/names'
@@ -217,6 +238,7 @@ export interface FileRouteTypes {
     | '/demo/form/simple'
     | '/demo/start/api-request'
     | '/demo/start/server-funcs'
+    | '/site/games/flappy-bird'
     | '/demo/start/ssr/data-only'
     | '/demo/start/ssr/full-ssr'
     | '/demo/start/ssr/spa-mode'
@@ -229,6 +251,7 @@ export interface FileRouteTypes {
     | '/demo/store'
     | '/demo/table'
     | '/demo/tanstack-query'
+    | '/site/about'
     | '/site/myuser'
     | '/site/'
     | '/demo/api/names'
@@ -237,6 +260,7 @@ export interface FileRouteTypes {
     | '/demo/form/simple'
     | '/demo/start/api-request'
     | '/demo/start/server-funcs'
+    | '/site/games/flappy-bird'
     | '/demo/start/ssr/data-only'
     | '/demo/start/ssr/full-ssr'
     | '/demo/start/ssr/spa-mode'
@@ -250,6 +274,7 @@ export interface RootRouteChildren {
   DemoStoreRoute: typeof DemoStoreRoute
   DemoTableRoute: typeof DemoTableRoute
   DemoTanstackQueryRoute: typeof DemoTanstackQueryRoute
+  SiteAboutRoute: typeof SiteAboutRoute
   SiteMyuserRoute: typeof SiteMyuserRoute
   SiteIndexRoute: typeof SiteIndexRoute
   DemoApiNamesRoute: typeof DemoApiNamesRoute
@@ -258,6 +283,7 @@ export interface RootRouteChildren {
   DemoFormSimpleRoute: typeof DemoFormSimpleRoute
   DemoStartApiRequestRoute: typeof DemoStartApiRequestRoute
   DemoStartServerFuncsRoute: typeof DemoStartServerFuncsRoute
+  SiteGamesFlappyBirdRoute: typeof SiteGamesFlappyBirdRoute
   DemoStartSsrDataOnlyRoute: typeof DemoStartSsrDataOnlyRoute
   DemoStartSsrFullSsrRoute: typeof DemoStartSsrFullSsrRoute
   DemoStartSsrSpaModeRoute: typeof DemoStartSsrSpaModeRoute
@@ -301,6 +327,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SiteMyuserRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/site/about': {
+      id: '/site/about'
+      path: '/site/about'
+      fullPath: '/site/about'
+      preLoaderRoute: typeof SiteAboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/demo/tanstack-query': {
       id: '/demo/tanstack-query'
       path: '/demo/tanstack-query'
@@ -320,6 +353,13 @@ declare module '@tanstack/react-router' {
       path: '/demo/store'
       fullPath: '/demo/store'
       preLoaderRoute: typeof DemoStoreRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/site/games/flappy-bird': {
+      id: '/site/games/flappy-bird'
+      path: '/site/games/flappy-bird'
+      fullPath: '/site/games/flappy-bird'
+      preLoaderRoute: typeof SiteGamesFlappyBirdRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/demo/start/server-funcs': {
@@ -402,6 +442,7 @@ const rootRouteChildren: RootRouteChildren = {
   DemoStoreRoute: DemoStoreRoute,
   DemoTableRoute: DemoTableRoute,
   DemoTanstackQueryRoute: DemoTanstackQueryRoute,
+  SiteAboutRoute: SiteAboutRoute,
   SiteMyuserRoute: SiteMyuserRoute,
   SiteIndexRoute: SiteIndexRoute,
   DemoApiNamesRoute: DemoApiNamesRoute,
@@ -410,6 +451,7 @@ const rootRouteChildren: RootRouteChildren = {
   DemoFormSimpleRoute: DemoFormSimpleRoute,
   DemoStartApiRequestRoute: DemoStartApiRequestRoute,
   DemoStartServerFuncsRoute: DemoStartServerFuncsRoute,
+  SiteGamesFlappyBirdRoute: SiteGamesFlappyBirdRoute,
   DemoStartSsrDataOnlyRoute: DemoStartSsrDataOnlyRoute,
   DemoStartSsrFullSsrRoute: DemoStartSsrFullSsrRoute,
   DemoStartSsrSpaModeRoute: DemoStartSsrSpaModeRoute,
