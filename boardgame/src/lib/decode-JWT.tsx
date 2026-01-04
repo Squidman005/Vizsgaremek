@@ -1,19 +1,26 @@
-import { redirect } from "@tanstack/react-router";
+import { useState, useEffect } from "react";
+import { useNavigate } from "@tanstack/react-router";
 import { axiosClient } from "@/lib/axios-client";
 
-export async function decodeJWT() {
-  try {
-    const res = await axiosClient.get("/api/auth/status", { withCredentials: true });
+export function decodeJWT() {
+  const navigate = useNavigate();
+  const [user, setUser] = useState<any>(null);
+  const [loading, setLoading] = useState(true);
 
-    if (!res.data || Object.keys(res.data).length === 0) {
-      throw redirect({ to: "/login" });
-    }
+  useEffect(() => {
+    const fetchUser = async () => {
+      try {
+        const res = await axiosClient.get("/api/auth/status");
+        setUser(res.data);
+      } catch {
+        navigate({ to: "/login" });
+      } finally {
+        setLoading(false);
+      }
+    };
 
-    return { user: res.data, loading: false };
-  } catch (err: any) {
-    if (err.response?.status === 401 || err.response?.status === 403) {
-      throw redirect({ to: "/login" });
-    }
-    return { user: null, loading: false };
-  }
+    fetchUser();
+  }, [navigate]);
+
+  return { user, loading };
 }
