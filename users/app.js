@@ -26,7 +26,11 @@ const errorHandler = require("./api/middlewares/errorHandler");
 
 const authRoutes = require("./api/routes/authRoutes");
 
+const scoreRoutes = require("./api/routes/scoreRoutes")
+
 app.use("/api", api);
+
+api.use("/score",scoreRoutes)
 
 api.use("/users", userRoutes);
 

@@ -1,26 +1,20 @@
-module.exports = (sequelize) =>
-{
+module.exports = (sequelize) => {
     const User = require("./User")(sequelize);
+    const Score = require("./Score")(sequelize);
 
-    const Order = require("./Order")(sequelize);
-
-    User.hasMany(Order, 
-    {
-        foreignKey: "userID",
-
-        as: "orders",
-
-        constraints: false,
+    User.belongsToMany(Score, {
+        through: "UserScores",
+        as: "scores",
+        foreignKey: "userId",
+        otherKey: "scoreId",
     });
 
-    Order.belongsTo(User, 
-    {
-        foreignKey: "userID",
-
-        as: "user",
-
-        constraints: false,
+    Score.belongsToMany(User, {
+        through: "UserScores",
+        as: "users",
+        foreignKey: "scoreId",
+        otherKey: "userId",
     });
 
-    return { User, Order };
-}
+    return { User, Score };
+};
