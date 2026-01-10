@@ -8,7 +8,6 @@ import tailwindcss from '@tailwindcss/vite'
 const config = defineConfig({
   plugins: [
     devtools(),
-    // this is the plugin that enables path aliases
     viteTsConfigPaths({
       projects: ['./tsconfig.json'],
     }),
@@ -16,6 +15,14 @@ const config = defineConfig({
     tanstackStart(),
     viteReact(),
   ],
+  server: {
+    proxy: {
+      "/api": {
+        target: "http://localhost:5000",
+        changeOrigin: true,
+      },
+    },
+  },
 })
 
 export default config
