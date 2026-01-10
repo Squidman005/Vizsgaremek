@@ -1,4 +1,4 @@
-const ScoreService = require("./scoreService");
+const ScoreService = require("./ScoreService");
 const UserService = require("./UserService")
 
 module.exports = (db) =>
