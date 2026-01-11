@@ -1,4 +1,4 @@
-const ScoreRepository = require("./scoreRepository");
+const ScoreRepository = require("./ScoreRepository");
 const UserRepository = require("./UserRepository");
 
 module.exports = (db) =>
