@@ -1,37 +1,42 @@
-const{Model,DataTypes} = require("sequelize");
+const { Model, DataTypes } = require("sequelize");
 
-module.exports=(sequelize)=>{
-    class Score extends Model{};
+module.exports = (sequelize) => {
+    class Score extends Model { }
 
     Score.init(
         {
-            ID:{
-                type:DataTypes.INTEGER,
-                primaryKey:true,
-                autoIncrement:true,
-                allowNull:false,
-                
+            ID: {
+                type: DataTypes.INTEGER,
+                primaryKey: true,
+                autoIncrement: true,
+                allowNull: false,
             },
-            userId:{
-                type:DataTypes.STRING,
-                allowNull:false,
+            userId: {
+                type: DataTypes.STRING,
+                allowNull: false,
             },
-            score:{
-                type:DataTypes.INTEGER,
-                allowNull:false,
-                defaultValue:0,
+            score: {
+                type: DataTypes.INTEGER,
+                allowNull: false,
+                defaultValue: 0,
             },
-            gamename:{
-                type:DataTypes.STRING,
-                allowNull:false,
-            }
+            gamename: {
+                type: DataTypes.STRING,
+                allowNull: false,
+            },
         },
         {
             sequelize,
             modelName: "Score",
             createdAt: false,
             updatedAt: false,
-        },
+            scopes: {
+                public: {
+                    attributes: ["ID", "userId", "score", "gamename"],
+                },
+            },
+        }
     );
+
     return Score;
-}
+};

@@ -1,65 +1,50 @@
 const { Model, DataTypes } = require("sequelize");
-
 const authUtils = require("../utilities/authUtils");
 
-module.exports = (sequelize) =>
-{
-    class User extends Model {};
+module.exports = (sequelize) => {
+    class User extends Model { }
 
-    User.init
-    (
+    User.init(
         {
-            ID:
-            {
+            ID: {
                 type: DataTypes.INTEGER,
                 primaryKey: true,
                 autoIncrement: true,
                 allowNull: false,
             },
 
-            name:
-            {
+            name: {
                 type: DataTypes.STRING,
                 allowNull: false,
-                unique: "username"
+                unique: "username",
             },
 
-            email:
-            {
+            email: {
                 type: DataTypes.STRING,
                 allowNull: false,
                 unique: "email",
-
-                validate:
-                {
-                    isEmail:
-                    {
+                validate: {
+                    isEmail: {
                         args: true,
-
                         msg: "Invalid email format",
-                    }
-                }
+                    },
+                },
             },
 
-            password:
-            {
+            password: {
                 type: DataTypes.STRING,
                 allowNull: false,
-
-                set(value)
-                {
+                set(value) {
                     this.setDataValue("password", authUtils.hashPassword(value));
-                }
+                },
             },
 
-            isAdmin:
-            {
+            isAdmin: {
                 type: DataTypes.BOOLEAN,
                 allowNull: false,
                 defaultValue: false,
-            }
+            },
         },
-
         {
             sequelize,
             modelName: "User",
@@ -69,26 +54,18 @@ module.exports = (sequelize) =>
             scopes: {
                 public: {
                     attributes: ["name", "email", "registeredAt", "isAdmin"],
-                    include: {
-                    association: "orders",
-                    attributes: ["product_name", "price", "orderedAt"],
-                    }
                 },
 
                 withPassword: {
                     attributes: ["name", "email", "password", "registeredAt", "isAdmin"],
-                    include: {
-                    association: "orders",
-                    attributes: ["product_name", "price", "orderedAt"],
-                    }
                 },
 
                 admin: {
-                    where: { isAdmin: true }
-                }
-            }
-        },
+                    where: { isAdmin: true },
+                },
+            },
+        }
     );
 
     return User;
-}
+};
