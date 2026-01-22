@@ -1,4 +1,6 @@
 import { useEffect, useRef, useState } from "react"
+import { decodeJWT } from "@/lib/decode-JWT";
+import { axiosClient } from "@/lib/axios-client"
 
 type Pipe = {
   xPosition: number
@@ -6,7 +8,11 @@ type Pipe = {
   passed?: boolean
 }
 
-export function FlappyBirdGame() {
+type FlappyBirdGameProps = {
+  userName: string
+}
+
+export function FlappyBirdGame({ userName }: FlappyBirdGameProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const [isGameRunning, setIsGameRunning] = useState(false)
   const [currentScore, setCurrentScore] = useState(0)
@@ -27,6 +33,8 @@ export function FlappyBirdGame() {
   const pipes = useRef<Pipe[]>([])
   const [canvasWidth, setCanvasWidth] = useState(800)
 
+  const user = decodeJWT()?.user;
+
   useEffect(() => {
     const updateCanvasWidth = () => {
       const maxWidth = window.innerWidth - 40
@@ -36,6 +44,26 @@ export function FlappyBirdGame() {
     window.addEventListener("resize", updateCanvasWidth)
     return () => window.removeEventListener("resize", updateCanvasWidth)
   }, [])
+
+  const endGame = () => {
+    setIsGameOver(true)
+    setLastScore(currentScore)
+    setIsGameRunning(false)
+    const postScore = async () => {
+      try {
+        const res = await axiosClient.post("http://localhost:5000/api/score", {
+          score: currentScore,
+          userId: user.username,
+          gamename: "flappybird",
+        })
+        console.log("Score saved:", res.data)
+      } catch (err: any) {
+        console.error("Failed to save score:", err.response?.data || err.message || err)
+      }
+    }
+    postScore()
+  }
+
 
   useEffect(() => {
     if (!isGameRunning) return
@@ -49,7 +77,6 @@ export function FlappyBirdGame() {
 
     const gameLoop = () => {
       if (!isGameRunning) return
-
       context.clearRect(0, 0, canvasWidth, canvasHeight)
       context.fillStyle = "#87CEEB"
       context.fillRect(0, 0, canvasWidth, canvasHeight)
@@ -69,17 +96,13 @@ export function FlappyBirdGame() {
           pipe.xPosition -= pipeSpeed
           context.fillRect(pipe.xPosition, 0, pipeWidth, pipe.gapYPosition)
           context.fillRect(pipe.xPosition, pipe.gapYPosition + pipeGapHeight, pipeWidth, canvasHeight - pipe.gapYPosition - pipeGapHeight - floorHeight)
-
           if (
             bird.current.x + birdRadius > pipe.xPosition &&
             bird.current.x - birdRadius < pipe.xPosition + pipeWidth &&
             (bird.current.y - birdRadius < pipe.gapYPosition || bird.current.y + birdRadius > pipe.gapYPosition + pipeGapHeight)
           ) {
-            setIsGameOver(true)
-            setLastScore(currentScore)
-            setIsGameRunning(false)
+            endGame()
           }
-
           if (!pipe.passed && bird.current.x - birdRadius > pipe.xPosition + pipeWidth) {
             setCurrentScore((prev) => prev + 1)
             pipe.passed = true
@@ -93,9 +116,7 @@ export function FlappyBirdGame() {
         pipes.current = pipes.current.filter(pipe => pipe.xPosition + pipeWidth > 0)
 
         if (bird.current.y + birdRadius > canvasHeight - floorHeight || bird.current.y - birdRadius < 0) {
-          setIsGameOver(true)
-          setLastScore(currentScore)
-          setIsGameRunning(false)
+          endGame()
         }
       }
 
@@ -137,7 +158,6 @@ export function FlappyBirdGame() {
           onClick={handleBirdJump}
           className="border border-gray-400 w-full"
         />
-
         {!isGameRunning && (
           <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/50">
             {isGameOver && (

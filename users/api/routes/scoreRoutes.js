@@ -6,6 +6,10 @@ const scoreController = require("../controllers/scoreController");
 
 router.get("/", scoreController.getScores);
 
+// get játéknév szerint csökkenő sorrendbe top 10
+
+// get játékosnév szerint minden játékhoz csak a legnagyobbat
+
 router.post("/",scoreController.createScore);
 
 router.put("/",scoreController.updateScore);

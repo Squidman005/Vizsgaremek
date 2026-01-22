@@ -18,14 +18,20 @@ function RouteComponent() {
         <div className="px-4 grid grid-cols-[repeat(auto-fill,minmax(160px,1fr))] gap-2 mb-6">
           <GameCard
             name="Flappy Bird"
-            imageSrc="/images/placeholder.png"
+            imageSrc="/images/flappybird.png"
             navigateTo="/site/games/flappy-bird"
           />
 
           <GameCard
-            name="Flappy Bird"
+            name="Placeholder Game"
             imageSrc="/images/placeholder.png"
-            navigateTo="/site/games/flappy-bird"
+            navigateTo="#"
+          />
+
+          <GameCard
+            name="Placeholder Game"
+            imageSrc="/images/placeholder.png"
+            navigateTo="#"
           />
         </div>
         
