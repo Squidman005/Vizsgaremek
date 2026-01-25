@@ -1,6 +1,6 @@
 const {DbError}= require("../errors");
 
-const { Op, where } = require("sequelize");
+const { Op} = require("sequelize");
 
 class ScoreRepository{
     constructor(db){
@@ -11,6 +11,22 @@ class ScoreRepository{
     async getScores(){
         try {
             return await this.Score.scope(["public"]).findAll();
+        } catch (error) {
+            throw new DbError("Failed to fetc users",{
+                details:error.message,
+            });
+        }
+    }
+    async getScoresTopTen(gamename){
+        try {
+            return await this.Score.scope(["public"]).findAll({
+                where:{
+                    gamename:{[Op.eq]:gamename}
+                },
+                order:[
+                    ["score","DESC"]
+                ]
+            });
         } catch (error) {
             throw new DbError("Failed to fetc users",{
                 details:error.message,
