@@ -8,8 +8,9 @@ class ScoreService {
     async getScores() {
         return await this.scoreRepository.getScores();
     }
-    async getScoresTopTen(){
-        return await this.scoreRepository.getScores();
+    
+    async getScoresTopTen(gamename){
+        return await this.scoreRepository.getScoresTopTen(gamename);
     }
 
     async getScore(scoreID) {

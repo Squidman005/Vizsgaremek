@@ -17,6 +17,7 @@ class ScoreRepository{
             });
         }
     }
+    
     async getScoresTopTen(gamename){
         try {
             return await this.Score.scope(["public"]).findAll({
@@ -24,8 +25,9 @@ class ScoreRepository{
                     gamename:{[Op.eq]:gamename}
                 },
                 order:[
-                    ["score","DESC"]
-                ]
+                    ["score","DESC"],
+                ],
+                limit: 10,
             });
         } catch (error) {
             throw new DbError("Failed to fetc users",{

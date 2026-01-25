@@ -8,13 +8,13 @@ router.get("/", scoreController.getScores);
 
 // get játéknév szerint csökkenő sorrendbe top 10
 
-router.get("/:gamename",scoreController.getScoresTopTen)
-router.param("gamename", (req, res, next, userID) => 
+router.param("gamename", (req, res, next, gamename) => 
 {
-    req.userID = userID;
+    req.gamename = gamename;
 
     next();
 });
+router.get("/:gamename",scoreController.getScoresTopTen)
 
 // get játékosnév szerint minden játékhoz csak a legnagyobbat
 
