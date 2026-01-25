@@ -8,6 +8,9 @@ class ScoreService {
     async getScores() {
         return await this.scoreRepository.getScores();
     }
+    async getScoresTopTen(){
+        return await this.scoreRepository.getScores();
+    }
 
     async getScore(scoreID) {
         if (!scoreID) throw new BadRequestError("Missing score identification from payload");

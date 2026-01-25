@@ -15,24 +15,26 @@ exports.login = async (req, res) => {
 
     let user;
     try {
-        user = await userService.getUser(userID); 
+        user = await userService.getUser(userID);
     } catch (error) {
-
-        if (error.name === "NotFoundError") {
-        return res.status(401).json({ message: "User not found" });
-        }
         return res.status(500).json({ message: "Internal server error" });
     }
 
-    if (!bcrypt.compareSync(password, user.password)) {
-        return res.status(401).json({ message: "Wrong password" });
+    if (!user) {
+        return res.status(401).json({ message: "Invalid userID or password" });
+    }
+
+    const passwordMatch = await bcrypt.compare(password, user.password);
+    if (!passwordMatch) {
+        return res.status(401).json({ message: "Invalid userID or password" });
     }
 
     const token = authUtils.generateUserToken(user);
     authUtils.setCookie(res, "user_token", token);
 
     return res.status(200).json({ token });
-}
+};
+
 
 exports.status = (req, res, next) =>
 {
