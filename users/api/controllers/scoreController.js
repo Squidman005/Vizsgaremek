@@ -20,6 +20,7 @@ exports.getScore = async (req, res, next) => {
         next(error);
     }
 };
+
 exports.getScoresTopTen=async(req,res,next)=>{
     const gamename = req.gamename;
      try {
@@ -28,7 +29,8 @@ exports.getScoresTopTen=async(req,res,next)=>{
     } catch (error) {
         next(error);
     }
-}
+};
+
 exports.createScore = async (req, res, next) => {
     const { userId, score, gamename } = req.body || {};
     try {
