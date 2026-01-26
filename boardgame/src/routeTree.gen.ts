@@ -18,6 +18,7 @@ import { Route as SiteAboutRouteImport } from './routes/site/about'
 import { Route as DemoTanstackQueryRouteImport } from './routes/demo/tanstack-query'
 import { Route as DemoTableRouteImport } from './routes/demo/table'
 import { Route as DemoStoreRouteImport } from './routes/demo/store'
+import { Route as SiteGamesSpaceGameRouteImport } from './routes/site/games/space-game'
 import { Route as SiteGamesFlappyBirdRouteImport } from './routes/site/games/flappy-bird'
 import { Route as DemoStartServerFuncsRouteImport } from './routes/demo/start.server-funcs'
 import { Route as DemoStartApiRequestRouteImport } from './routes/demo/start.api-request'
@@ -73,6 +74,11 @@ const DemoTableRoute = DemoTableRouteImport.update({
 const DemoStoreRoute = DemoStoreRouteImport.update({
   id: '/demo/store',
   path: '/demo/store',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SiteGamesSpaceGameRoute = SiteGamesSpaceGameRouteImport.update({
+  id: '/site/games/space-game',
+  path: '/site/games/space-game',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SiteGamesFlappyBirdRoute = SiteGamesFlappyBirdRouteImport.update({
@@ -148,6 +154,7 @@ export interface FileRoutesByFullPath {
   '/demo/start/api-request': typeof DemoStartApiRequestRoute
   '/demo/start/server-funcs': typeof DemoStartServerFuncsRoute
   '/site/games/flappy-bird': typeof SiteGamesFlappyBirdRoute
+  '/site/games/space-game': typeof SiteGamesSpaceGameRoute
   '/demo/start/ssr/data-only': typeof DemoStartSsrDataOnlyRoute
   '/demo/start/ssr/full-ssr': typeof DemoStartSsrFullSsrRoute
   '/demo/start/ssr/spa-mode': typeof DemoStartSsrSpaModeRoute
@@ -170,6 +177,7 @@ export interface FileRoutesByTo {
   '/demo/start/api-request': typeof DemoStartApiRequestRoute
   '/demo/start/server-funcs': typeof DemoStartServerFuncsRoute
   '/site/games/flappy-bird': typeof SiteGamesFlappyBirdRoute
+  '/site/games/space-game': typeof SiteGamesSpaceGameRoute
   '/demo/start/ssr/data-only': typeof DemoStartSsrDataOnlyRoute
   '/demo/start/ssr/full-ssr': typeof DemoStartSsrFullSsrRoute
   '/demo/start/ssr/spa-mode': typeof DemoStartSsrSpaModeRoute
@@ -193,6 +201,7 @@ export interface FileRoutesById {
   '/demo/start/api-request': typeof DemoStartApiRequestRoute
   '/demo/start/server-funcs': typeof DemoStartServerFuncsRoute
   '/site/games/flappy-bird': typeof SiteGamesFlappyBirdRoute
+  '/site/games/space-game': typeof SiteGamesSpaceGameRoute
   '/demo/start/ssr/data-only': typeof DemoStartSsrDataOnlyRoute
   '/demo/start/ssr/full-ssr': typeof DemoStartSsrFullSsrRoute
   '/demo/start/ssr/spa-mode': typeof DemoStartSsrSpaModeRoute
@@ -217,6 +226,7 @@ export interface FileRouteTypes {
     | '/demo/start/api-request'
     | '/demo/start/server-funcs'
     | '/site/games/flappy-bird'
+    | '/site/games/space-game'
     | '/demo/start/ssr/data-only'
     | '/demo/start/ssr/full-ssr'
     | '/demo/start/ssr/spa-mode'
@@ -239,6 +249,7 @@ export interface FileRouteTypes {
     | '/demo/start/api-request'
     | '/demo/start/server-funcs'
     | '/site/games/flappy-bird'
+    | '/site/games/space-game'
     | '/demo/start/ssr/data-only'
     | '/demo/start/ssr/full-ssr'
     | '/demo/start/ssr/spa-mode'
@@ -261,6 +272,7 @@ export interface FileRouteTypes {
     | '/demo/start/api-request'
     | '/demo/start/server-funcs'
     | '/site/games/flappy-bird'
+    | '/site/games/space-game'
     | '/demo/start/ssr/data-only'
     | '/demo/start/ssr/full-ssr'
     | '/demo/start/ssr/spa-mode'
@@ -284,6 +296,7 @@ export interface RootRouteChildren {
   DemoStartApiRequestRoute: typeof DemoStartApiRequestRoute
   DemoStartServerFuncsRoute: typeof DemoStartServerFuncsRoute
   SiteGamesFlappyBirdRoute: typeof SiteGamesFlappyBirdRoute
+  SiteGamesSpaceGameRoute: typeof SiteGamesSpaceGameRoute
   DemoStartSsrDataOnlyRoute: typeof DemoStartSsrDataOnlyRoute
   DemoStartSsrFullSsrRoute: typeof DemoStartSsrFullSsrRoute
   DemoStartSsrSpaModeRoute: typeof DemoStartSsrSpaModeRoute
@@ -353,6 +366,13 @@ declare module '@tanstack/react-router' {
       path: '/demo/store'
       fullPath: '/demo/store'
       preLoaderRoute: typeof DemoStoreRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/site/games/space-game': {
+      id: '/site/games/space-game'
+      path: '/site/games/space-game'
+      fullPath: '/site/games/space-game'
+      preLoaderRoute: typeof SiteGamesSpaceGameRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/site/games/flappy-bird': {
@@ -452,6 +472,7 @@ const rootRouteChildren: RootRouteChildren = {
   DemoStartApiRequestRoute: DemoStartApiRequestRoute,
   DemoStartServerFuncsRoute: DemoStartServerFuncsRoute,
   SiteGamesFlappyBirdRoute: SiteGamesFlappyBirdRoute,
+  SiteGamesSpaceGameRoute: SiteGamesSpaceGameRoute,
   DemoStartSsrDataOnlyRoute: DemoStartSsrDataOnlyRoute,
   DemoStartSsrFullSsrRoute: DemoStartSsrFullSsrRoute,
   DemoStartSsrSpaModeRoute: DemoStartSsrSpaModeRoute,

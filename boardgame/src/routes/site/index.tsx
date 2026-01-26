@@ -23,9 +23,9 @@ function RouteComponent() {
           />
 
           <GameCard
-            name="Placeholder Game"
-            imageSrc="/images/placeholder.png"
-            navigateTo="#"
+            name="Space Game"
+            imageSrc="/images/spacegame.png"
+            navigateTo="/site/games/space-game"
           />
 
           <GameCard
