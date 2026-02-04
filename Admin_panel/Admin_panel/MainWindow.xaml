@@ -1,0 +1,33 @@
+﻿<Window x:Class="Admin_panel.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:Admin_panel"
+        Title="Admin Panel" Height="450" Width="800">
+
+    <Grid>
+        <!-- LOGIN PANEL -->
+        <Grid x:Name="LoginGrid">
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="250">
+                <TextBlock Text="UserID"/>
+                <TextBox x:Name="UsernameTextBox" Margin="0,5,0,10"/>
+                <TextBlock Text="Password"/>
+                <PasswordBox x:Name="PasswordBox" Margin="0,5,0,20"/>
+                <Button Content="Login" Click="Login_Click"/>
+            </StackPanel>
+        </Grid>
+
+        <!-- USERS PANEL -->
+        <Grid Name="UsersGrid" Visibility="Collapsed">
+            <DataGrid Name="DataGrid_Users" ItemsSource="{Binding Users}" AutoGenerateColumns="False" CanUserAddRows="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding ID}" Header="Id" Width="50"/>
+                    <DataGridTextColumn Binding="{Binding Name}" Header="Name" Width="150"/>
+                    <DataGridTextColumn Binding="{Binding Email}" Header="Email" Width="150"/>
+                    <DataGridTextColumn Binding="{Binding Password}" Header="Password" Width="240"/>
+                    <DataGridTextColumn Binding="{Binding isAdmin}" Header="Admin" Width="45"/>
+                    <DataGridTextColumn Binding="{Binding RegisteredAt}" Header="Registered At" Width="*"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+    </Grid>
+</Window>
