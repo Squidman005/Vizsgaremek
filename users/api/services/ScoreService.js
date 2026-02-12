@@ -31,6 +31,9 @@ class ScoreService {
     async updateScore(scoreID, scoreData) {
         if (!scoreID) throw new BadRequestError("Missing score ID");
         if (!scoreData || Object.keys(scoreData).length === 0) throw new BadRequestError("Missing score data", { data: scoreID });
+        if (!scoreData.userId) throw new BadRequestError("Missing userId", { data: scoreData });
+        if (scoreData.score === undefined) throw new BadRequestError("Missing score value", { data: scoreData });
+        if (!scoreData.gamename) throw new BadRequestError("Missing gamename", { data: scoreData });
         return await this.scoreRepository.updateScore(scoreData, scoreID);
     }
 
