@@ -50,3 +50,24 @@ exports.createUser = async (req, res, next) =>
         next(error);
     }
 }
+
+exports.updateUser= async (req,res,next)=>{
+    const userID = req.userID;
+    const{username,email,password} = req.body||{};
+    try {
+        const updatedUser =await userService.updateUser(userID,{username,email,password })
+        res.status(200).json(updatedUser)
+    } catch (error) {
+        next(error)
+    }
+}
+
+exports.deleteUser=async(req,res,nexr) =>{
+    const userID = req.userID;
+    try {
+        await userService.deleteUser(userID);
+        res.status(204).send()
+    } catch (error) {
+        next(error)
+    }
+}
