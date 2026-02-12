@@ -29,6 +29,12 @@ function RouteComponent() {
           />
 
           <GameCard
+            name="Aim Lab"
+            imageSrc="/images/aimlab.png"
+            navigateTo="/site/games/aimlab-game"
+          />
+
+          <GameCard
             name="Placeholder Game"
             imageSrc="/images/placeholder.png"
             navigateTo="#"
