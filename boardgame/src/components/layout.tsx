@@ -17,7 +17,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
           </button>
         </nav>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 transition hover:brightness-130">
           <LogoutButton />
         </div>
       </header>

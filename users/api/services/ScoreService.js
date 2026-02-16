@@ -10,8 +10,15 @@ class ScoreService {
     }
     
     async getScoresTopTen(gamename){
+        if (!gamename) throw new BadRequestError("Missing gamename");
         return await this.scoreRepository.getScoresTopTen(gamename);
     }
+
+    async getPlayerBestScores(playername) {
+        if (!playername) throw new BadRequestError("Missing playername");
+        return await this.scoreRepository.getPlayerBestScores(playername);
+    }
+
 
     async getScore(scoreID) {
         if (!scoreID) throw new BadRequestError("Missing score identification from payload");

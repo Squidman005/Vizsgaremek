@@ -31,6 +31,17 @@ exports.getScoresTopTen=async(req,res,next)=>{
     }
 };
 
+exports.getPlayerBestScores = async (req, res, next) => {
+    const playername = req.playername;
+    try {
+        const bestScores = await scoreService.getPlayerBestScores(playername);
+        res.status(200).json(bestScores);
+    } catch (error) {
+        next(error);
+    }
+};
+
+
 exports.createScore = async (req, res, next) => {
     const { userId, score, gamename } = req.body || {};
     try {
