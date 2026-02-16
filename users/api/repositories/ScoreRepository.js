@@ -36,6 +36,28 @@ class ScoreRepository{
         }
     }
 
+    async getPlayerBestScores(playername) {
+        try {
+            const results = await this.Score.findAll({
+                where: { userID: playername },
+                attributes: [
+                    "gamename",
+                    [this.sequelize.fn("MAX", this.sequelize.col("score")), "score"]
+                ],
+                group: ["gamename"],
+                order: [[this.sequelize.fn("MAX", this.sequelize.col("score")), "DESC"]],
+                raw: true
+            });
+
+            return results;
+        } catch (error) {
+            throw new DbError("Failed to fetch player's best scores", {
+                details: error.message,
+                data: playername
+            });
+        }
+    }
+
     async getScore(scoreID){
         try {
             return await this.Score.scope(["public"]).findOne({

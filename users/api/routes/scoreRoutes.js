@@ -18,6 +18,15 @@ router.get("/:gamename",scoreController.getScoresTopTen)
 
 // get játékosnév szerint minden játékhoz csak a legnagyobbat
 
+router.param("playername", (req, res, next, playername) => {
+    req.playername = playername;
+    
+    next();
+});
+
+router.get("/player/:playername", scoreController.getPlayerBestScores);
+
+
 router.post("/",scoreController.createScore);
 
 router.put("/",scoreController.updateScore);
