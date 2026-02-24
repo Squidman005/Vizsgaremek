@@ -20,6 +20,7 @@ import { Route as DemoTableRouteImport } from './routes/demo/table'
 import { Route as DemoStoreRouteImport } from './routes/demo/store'
 import { Route as SiteGamesSpaceGameRouteImport } from './routes/site/games/space-game'
 import { Route as SiteGamesFlappyBirdRouteImport } from './routes/site/games/flappy-bird'
+import { Route as SiteGamesBrickBreakerRouteImport } from './routes/site/games/brick-breaker'
 import { Route as SiteGamesAimlabGameRouteImport } from './routes/site/games/aimlab-game'
 import { Route as DemoStartServerFuncsRouteImport } from './routes/demo/start.server-funcs'
 import { Route as DemoStartApiRequestRouteImport } from './routes/demo/start.api-request'
@@ -85,6 +86,11 @@ const SiteGamesSpaceGameRoute = SiteGamesSpaceGameRouteImport.update({
 const SiteGamesFlappyBirdRoute = SiteGamesFlappyBirdRouteImport.update({
   id: '/site/games/flappy-bird',
   path: '/site/games/flappy-bird',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SiteGamesBrickBreakerRoute = SiteGamesBrickBreakerRouteImport.update({
+  id: '/site/games/brick-breaker',
+  path: '/site/games/brick-breaker',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SiteGamesAimlabGameRoute = SiteGamesAimlabGameRouteImport.update({
@@ -160,6 +166,7 @@ export interface FileRoutesByFullPath {
   '/demo/start/api-request': typeof DemoStartApiRequestRoute
   '/demo/start/server-funcs': typeof DemoStartServerFuncsRoute
   '/site/games/aimlab-game': typeof SiteGamesAimlabGameRoute
+  '/site/games/brick-breaker': typeof SiteGamesBrickBreakerRoute
   '/site/games/flappy-bird': typeof SiteGamesFlappyBirdRoute
   '/site/games/space-game': typeof SiteGamesSpaceGameRoute
   '/demo/start/ssr/data-only': typeof DemoStartSsrDataOnlyRoute
@@ -184,6 +191,7 @@ export interface FileRoutesByTo {
   '/demo/start/api-request': typeof DemoStartApiRequestRoute
   '/demo/start/server-funcs': typeof DemoStartServerFuncsRoute
   '/site/games/aimlab-game': typeof SiteGamesAimlabGameRoute
+  '/site/games/brick-breaker': typeof SiteGamesBrickBreakerRoute
   '/site/games/flappy-bird': typeof SiteGamesFlappyBirdRoute
   '/site/games/space-game': typeof SiteGamesSpaceGameRoute
   '/demo/start/ssr/data-only': typeof DemoStartSsrDataOnlyRoute
@@ -209,6 +217,7 @@ export interface FileRoutesById {
   '/demo/start/api-request': typeof DemoStartApiRequestRoute
   '/demo/start/server-funcs': typeof DemoStartServerFuncsRoute
   '/site/games/aimlab-game': typeof SiteGamesAimlabGameRoute
+  '/site/games/brick-breaker': typeof SiteGamesBrickBreakerRoute
   '/site/games/flappy-bird': typeof SiteGamesFlappyBirdRoute
   '/site/games/space-game': typeof SiteGamesSpaceGameRoute
   '/demo/start/ssr/data-only': typeof DemoStartSsrDataOnlyRoute
@@ -235,6 +244,7 @@ export interface FileRouteTypes {
     | '/demo/start/api-request'
     | '/demo/start/server-funcs'
     | '/site/games/aimlab-game'
+    | '/site/games/brick-breaker'
     | '/site/games/flappy-bird'
     | '/site/games/space-game'
     | '/demo/start/ssr/data-only'
@@ -259,6 +269,7 @@ export interface FileRouteTypes {
     | '/demo/start/api-request'
     | '/demo/start/server-funcs'
     | '/site/games/aimlab-game'
+    | '/site/games/brick-breaker'
     | '/site/games/flappy-bird'
     | '/site/games/space-game'
     | '/demo/start/ssr/data-only'
@@ -283,6 +294,7 @@ export interface FileRouteTypes {
     | '/demo/start/api-request'
     | '/demo/start/server-funcs'
     | '/site/games/aimlab-game'
+    | '/site/games/brick-breaker'
     | '/site/games/flappy-bird'
     | '/site/games/space-game'
     | '/demo/start/ssr/data-only'
@@ -308,6 +320,7 @@ export interface RootRouteChildren {
   DemoStartApiRequestRoute: typeof DemoStartApiRequestRoute
   DemoStartServerFuncsRoute: typeof DemoStartServerFuncsRoute
   SiteGamesAimlabGameRoute: typeof SiteGamesAimlabGameRoute
+  SiteGamesBrickBreakerRoute: typeof SiteGamesBrickBreakerRoute
   SiteGamesFlappyBirdRoute: typeof SiteGamesFlappyBirdRoute
   SiteGamesSpaceGameRoute: typeof SiteGamesSpaceGameRoute
   DemoStartSsrDataOnlyRoute: typeof DemoStartSsrDataOnlyRoute
@@ -393,6 +406,13 @@ declare module '@tanstack/react-router' {
       path: '/site/games/flappy-bird'
       fullPath: '/site/games/flappy-bird'
       preLoaderRoute: typeof SiteGamesFlappyBirdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/site/games/brick-breaker': {
+      id: '/site/games/brick-breaker'
+      path: '/site/games/brick-breaker'
+      fullPath: '/site/games/brick-breaker'
+      preLoaderRoute: typeof SiteGamesBrickBreakerRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/site/games/aimlab-game': {
@@ -492,6 +512,7 @@ const rootRouteChildren: RootRouteChildren = {
   DemoStartApiRequestRoute: DemoStartApiRequestRoute,
   DemoStartServerFuncsRoute: DemoStartServerFuncsRoute,
   SiteGamesAimlabGameRoute: SiteGamesAimlabGameRoute,
+  SiteGamesBrickBreakerRoute: SiteGamesBrickBreakerRoute,
   SiteGamesFlappyBirdRoute: SiteGamesFlappyBirdRoute,
   SiteGamesSpaceGameRoute: SiteGamesSpaceGameRoute,
   DemoStartSsrDataOnlyRoute: DemoStartSsrDataOnlyRoute,

@@ -35,6 +35,12 @@ function RouteComponent() {
           />
 
           <GameCard
+            name="Brick Breaker"
+            imageSrc="/images/brickbreaker.png"
+            navigateTo="/site/games/brick-breaker"
+          />
+
+          <GameCard
             name="Placeholder Game"
             imageSrc="/images/placeholder.png"
             navigateTo="#"
