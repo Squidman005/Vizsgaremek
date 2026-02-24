@@ -26,7 +26,7 @@ export function BrickBreakerGame() {
   const paddleHeight = 15
   const paddleSpeed = 7
   const ballRadius = 8
-  const baseBallSpeed = 5
+  const baseBallSpeed = 3
   const brickWidth = 75
   const brickHeight = 20
   const brickPadding = 10
@@ -213,7 +213,7 @@ export function BrickBreakerGame() {
         gamename="brickbreaker"
         title="Brick Breaker"
         controls="Arrow keys or buttons"
-        description={`Break the bricks with the ball, don't let it fall\n\tBrick types:\n\t\tNormal: Breaks in one hit\n\t\tStrong: Needs two hits\n\t\tSmall: Half-width brick\n\t\tSpeed: Increases ball speed temporarily`}
+        description={`Break the bricks with the ball, don't let it fall\n\tBrick types:\n\t\tCyan: Breaks in one hit\n\t\tPurple: Needs two hits\n\t\tYellow: Half-width brick\n\t\tGreen: Increases ball speed temporarily`}
         refreshKey={lastScore}
       />
     </div>

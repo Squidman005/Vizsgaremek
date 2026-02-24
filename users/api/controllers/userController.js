@@ -1,5 +1,5 @@
 const db = require("../db");
-
+const jwt = require("jsonwebtoken");
 
 const { userService } = require("../services")(db);
 
@@ -61,6 +61,23 @@ exports.updateUser= async (req,res,next)=>{
         next(error)
     }
 }
+
+exports.updatePassword = async (req, res, next) => {
+    console.log("req.user:", req.user);
+
+    const userID = req.user.userID;  
+    console.log("User ID from token:", userID);
+
+    const { password } = req.body || {};
+
+    try {
+        const updatedPassword = await userService.updatePassword(password, userID);
+        res.status(200).json(updatedPassword);
+    } catch (error) {
+        next(error);
+    }
+};
+
 
 exports.deleteUser=async(req,res,nexr) =>{
     const userID = req.userID;

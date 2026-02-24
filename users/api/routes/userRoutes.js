@@ -18,6 +18,8 @@ router.get("/", userController.getUser);
 
 router.put("/",userController.updateUser);
 
+router.put("/password", authMiddleware.userIsLoggedIn, userController.updatePassword);
+
 router.delete("/",userController.deleteUser)
 
 module.exports = router;
