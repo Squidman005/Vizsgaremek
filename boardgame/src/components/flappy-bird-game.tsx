@@ -9,11 +9,7 @@ type Pipe = {
   passed?: boolean
 }
 
-type FlappyBirdGameProps = {
-  userName: string
-}
-
-export function FlappyBirdGame({ userName }: FlappyBirdGameProps) {
+export function FlappyBirdGame() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const [isGameRunning, setIsGameRunning] = useState(false)
   const [currentScore, setCurrentScore] = useState(0)
