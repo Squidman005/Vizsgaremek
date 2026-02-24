@@ -62,7 +62,7 @@ export function ScoreList({ gamename, title, controls, description, refreshKey }
             </div>
             <div>
               <h3 className="text-gray-300 font-semibold mb-1">Description:</h3>
-              <p className="text-gray-200">{description}</p>
+              <p style={{ whiteSpace: "pre-wrap" }} className="text-gray-200">{description}</p>
             </div>
           </div>
         </div>
