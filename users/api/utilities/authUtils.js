@@ -9,6 +9,11 @@ exports.generateUserToken = (user) =>
     return jwt.sign({ userID: user.ID, username: user.name, isAdmin: user.isAdmin }, process.env.JWT_SECRET);
 }
 
+exports.generateUserToken = (user) => {
+    return jwt.sign({ userID: user.ID, username: user.name, isAdmin: user.isAdmin }, process.env.JWT_SECRET);
+};
+
+
 exports.setCookie = (res, cookieName, value) =>
 {
     res.cookie(cookieName, value, {
