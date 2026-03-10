@@ -20,6 +20,8 @@ router.put("/",userController.updateUser);
 
 router.put("/password", authMiddleware.userIsLoggedIn, userController.updatePassword);
 
+router.put("/password-reset", userController.resetPasswordByEmail);
+
 router.delete("/",userController.deleteUser)
 
 module.exports = router;

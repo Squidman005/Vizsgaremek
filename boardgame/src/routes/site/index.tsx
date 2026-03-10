@@ -15,7 +15,7 @@ function RouteComponent() {
     <>
       <Layout>
 
-        <div className="px-4 grid grid-cols-[repeat(auto-fill,minmax(160px,1fr))] gap-2 mb-6">
+        <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-4 gap-6 p-6">
           <GameCard
             name="Flappy Bird"
             imageSrc="/images/flappybird.png"
@@ -40,11 +40,13 @@ function RouteComponent() {
             navigateTo="/site/games/brick-breaker"
           />
 
-          <GameCard
+          
+          {/* Ezt használtuk hogy helyet foglaljon */}
+          {/* <GameCard
             name="Placeholder Game"
             imageSrc="/images/placeholder.png"
             navigateTo="#"
-          />
+          /> */}
         </div>
         
       </Layout>

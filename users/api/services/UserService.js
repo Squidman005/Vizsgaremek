@@ -1,4 +1,6 @@
 const { BadRequestError, NotFoundError } = require("../errors");
+const authUtils = require("../utilities/authUtils");
+const { sendEmail } = require("../utilities/emailUtils");
 
 class UserService
 {
@@ -86,6 +88,25 @@ class UserService
         if(!user) throw new NotFoundError("Cannot find score whit this ID",{data:userID});
         return {success:true};
 
+    }
+
+    async resetPasswordByEmail(email, password) {
+        if (!email) throw new BadRequestError("Email is required");
+        if (!password) throw new BadRequestError("Password is required");
+
+        const updatedCount = await this.userRepository.updatePasswordByEmail(email, password);
+
+        if (!updatedCount) {
+        throw new NotFoundError("Cannot find user with this email", { data: email });
+        }
+
+        await sendEmail({
+        to: email,
+        subject: "Jelszó visszaállítva",
+        html: `<p>Az új jelszavad: <strong>${password}</strong></p>`,
+        });
+
+        return { success: true };
     }
 }
 

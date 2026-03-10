@@ -109,6 +109,10 @@ export function LoginForm({ className, ...props }: React.ComponentProps<"div">) 
                 Ha még nincs felhasználód:<br />
                 <a onClick={() => navigate({ to: "/registration" })} className="text-blue-400 hover:underline cursor-pointer">
                   Regisztrálj
+                </a><br /><br />
+                Ha elfelejtetted a jelszavad:<br />
+                <a onClick={() => navigate({ to: "/password-reset" })} className="text-blue-400 hover:underline cursor-pointer">
+                  Jelszó visszaállítása
                 </a>
               </FieldDescription>
             </form>

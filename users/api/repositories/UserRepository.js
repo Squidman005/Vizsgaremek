@@ -132,6 +132,27 @@ class UserRepository
             });
         }
     }
+
+    async updatePasswordByEmail(email, password) {
+        if (!email) throw new Error("Missing email");
+        if (!password) throw new Error("Missing password");
+
+        try {
+        const [updatedCount] = await this.User.update(
+            { password },
+            { where: { email } }
+        );
+
+        if (updatedCount === 0) {
+            return 0;
+        }
+
+        return updatedCount;
+        } catch (error) {
+        throw new Error("Failed to update password: " + error.message);
+        }
+    }
 }
+
 
 module.exports = UserRepository;

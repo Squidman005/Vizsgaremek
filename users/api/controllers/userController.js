@@ -83,8 +83,23 @@ exports.deleteUser=async(req,res,nexr) =>{
     const userID = req.userID;
     try {
         await userService.deleteUser(userID);
-        res.status(204).send()
+        res.status(204).json({ message: "OK" });
     } catch (error) {
         next(error)
     }
 }
+
+exports.resetPasswordByEmail = async (req, res, next) => {
+    const { email, password } = req.body || {};
+
+    try {
+        if (!email) throw new BadRequestError("Email is required");
+        if (!password) throw new BadRequestError("Password is required");
+
+        await userService.resetPasswordByEmail(email, password);
+
+        res.status(200).json({ message: "OK" });
+    } catch (error) {
+        next(error);
+    }
+};
