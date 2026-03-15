@@ -71,6 +71,11 @@ class UserService
             data: userData,
         });
 
+        if (userData.isAdmin === undefined || userData.isAdmin === null) throw new BadRequestError("Missing isAdmin from payload",
+        { 
+            data: userData 
+        });
+
         return await this.userRepository.updateUser(userData,userID)
 
     }

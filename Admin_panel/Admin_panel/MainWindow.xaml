@@ -2,13 +2,13 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:local="clr-namespace:Admin_panel"
-        Title="Admin Panel" Height="450" Width="800">
+        Title="Admin Panel" Height="700" Width="1000">
 
     <Grid>
         <!-- LOGIN PANEL -->
         <Grid x:Name="LoginGrid">
             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="250">
-                <TextBlock Text="UserID"/>
+                <TextBlock Text="Username / Email"/>
                 <TextBox x:Name="UsernameTextBox" Margin="0,5,0,10"/>
                 <TextBlock Text="Password"/>
                 <PasswordBox x:Name="PasswordBox" Margin="0,5,0,20"/>
@@ -18,14 +18,58 @@
 
         <!-- USERS PANEL -->
         <Grid Name="UsersGrid" Visibility="Collapsed">
-            <DataGrid Name="DataGrid_Users" ItemsSource="{Binding Users}" AutoGenerateColumns="False" CanUserAddRows="False">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!-- CREATE USER FORM -->
+            <GroupBox Header="Create New User" Margin="5" Grid.Row="0">
+                <StackPanel Width="300" Margin="5">
+                    <TextBlock Text="Username"/>
+                    <TextBox x:Name="CreateUsernameTextBox" Margin="0,5,0,5"/>
+                    <TextBlock Text="Email"/>
+                    <TextBox x:Name="CreateEmailTextBox" Margin="0,5,0,5"/>
+                    <TextBlock Text="Password"/>
+                    <PasswordBox x:Name="CreatePasswordBox" Margin="0,5,0,5"/>
+                    <Button Content="Create User" Click="CreateUser_Click"/>
+                </StackPanel>
+            </GroupBox>
+
+            <!-- UPDATE USER FORM (hidden by default) -->
+            <GroupBox Header="Update User" Margin="5" Grid.Row="1" x:Name="UpdateUserGroupBox" Visibility="Collapsed">
+                <StackPanel Width="300" Margin="5">
+                    <TextBlock Text="Username"/>
+                    <TextBox x:Name="UpdateUsernameTextBox" Margin="0,5,0,5"/>
+                    <TextBlock Text="Email"/>
+                    <TextBox x:Name="UpdateEmailTextBox" Margin="0,5,0,5"/>
+                    <TextBlock Text="Password"/>
+                    <PasswordBox x:Name="UpdatePasswordBox" Margin="0,5,0,5"/>
+                    <CheckBox x:Name="UpdateIsAdminCheckBox" Content="Admin" Margin="0,5,0,5"/>
+                    <Button Content="Update User" Click="UpdateUser_Click"/>
+                </StackPanel>
+            </GroupBox>
+
+            <!-- USERS DATA GRID -->
+            <DataGrid Grid.Row="2" Name="DataGrid_Users" ItemsSource="{Binding Users}" AutoGenerateColumns="False" CanUserAddRows="False" Margin="5">
                 <DataGrid.Columns>
                     <DataGridTextColumn Binding="{Binding ID}" Header="Id" Width="50"/>
                     <DataGridTextColumn Binding="{Binding Name}" Header="Name" Width="150"/>
                     <DataGridTextColumn Binding="{Binding Email}" Header="Email" Width="150"/>
-                    <DataGridTextColumn Binding="{Binding Password}" Header="Password" Width="240"/>
-                    <DataGridTextColumn Binding="{Binding isAdmin}" Header="Admin" Width="45"/>
+                    <DataGridTextColumn Binding="{Binding Password}" Header="Password" Width="150"/>
+                    <DataGridCheckBoxColumn Binding="{Binding isAdmin}" Header="Admin" Width="50"/>
                     <DataGridTextColumn Binding="{Binding RegisteredAt}" Header="Registered At" Width="*"/>
+                    <DataGridTemplateColumn Header="Actions" Width="200">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                    <Button Content="Edit" Margin="2" Click="EditUser_Click"/>
+                                    <Button Content="Delete" Margin="2" Click="DeleteUser_Click"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
                 </DataGrid.Columns>
             </DataGrid>
         </Grid>

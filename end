@@ -1,0 +1,30 @@
+[33mcommit 3bbe3f4d4cd16c41c4b38739dd01578c516087f2[m
+Merge: af2bd10 ecc3856
+Author: kote.mate <squidman009@gmail.com>
+Date:   Thu Jan 22 15:13:18 2026 +0100
+
+    Score saving implemented (Kóté Máté), backend fix (Magyar Martina)
+
+[33mcommit af2bd10bc2db49ac5deb9b55dd79fa6a063bdedb[m
+Author: kote.mate <squidman009@gmail.com>
+Date:   Sun Jan 11 16:59:37 2026 +0100
+
+    Api test / needs fixing (Zsidákovits Bálint)
+
+[33mcommit 83b97988f854647ad8f3df490a97b44ceec80460[m
+Author: Martinilli <martina.magyar07@gmail.com>
+Date:   Sat Jan 10 18:10:40 2026 +0100
+
+    Dockerizálás (Kóté Máté + Magyar Martina)
+
+[33mcommit e5fad05bb9c34d92903fe1fe44a054b62c69728a[m
+Author: kote.mate <squidman009@gmail.com>
+Date:   Fri Jan 9 20:09:56 2026 +0100
+
+    Scoreboard functionality in api (Magyar Martina)
+
+[33mcommit 33f339568b39c487696a4a3cafd16c6418e8b84f[m
+Author: kote.mate <squidman009@gmail.com>
+Date:   Thu Dec 18 11:07:48 2025 +0100
+
+    first use of github, adding react and api files

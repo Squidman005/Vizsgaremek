@@ -14,14 +14,14 @@ router.param("userID",(req,res,next,userID)=>{
     next()
 })
 
-router.get("/", userController.getUser);
+router.get("/:userID", userController.getUser);
 
-router.put("/",userController.updateUser);
+router.patch("/:userID",userController.updateUser);
 
 router.put("/password", authMiddleware.userIsLoggedIn, userController.updatePassword);
 
 router.put("/password-reset", userController.resetPasswordByEmail);
 
-router.delete("/",userController.deleteUser)
+router.delete("/:userID",userController.deleteUser)
 
 module.exports = router;

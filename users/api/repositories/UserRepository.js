@@ -78,30 +78,57 @@ class UserRepository
         }
     }
 
-    async updateUser(userData, userID = userData.ID) {
-        try {
-            const allowedFields = ["name", "email", "password"];
+    // async updateUser(userData, userID = userData.ID) {
+    //     try {
+    //         const allowedFields = ["name", "email", "password", "isAdmin"];
 
+    //         const updateData = Object.fromEntries(
+    //             Object.entries(userData)
+    //                 .filter(([key]) => allowedFields.includes(key))
+    //         );
+
+    //         updateData.password && (updateData.password = authUtils.hashPassword(updateData.password));
+
+    //         return await this.User.update(
+    //             updateData,
+    //             {
+    //                 where: {
+    //                     ID: userID
+    //                 }
+    //             }
+    //         );
+    //     }
+    //     catch (error) {
+    //         throw new DbError("Failed to update user", {
+    //             details: error.message,
+    //             data: { userID, userData }
+    //         });
+    //     }
+    // }
+
+    async updateUser(userID, userData) {
+        try {
+            const allowedFields = ["name", "email", "password", "isAdmin"];
             const updateData = Object.fromEntries(
                 Object.entries(userData)
-                    .filter(([key]) => allowedFields.includes(key))
+                    .filter(([key, value]) => allowedFields.includes(key) && value !== undefined)
             );
 
-            updateData.password && (updateData.password = authUtils.hashPassword(updateData.password));
+            if (updateData.password) {
+                updateData.password = authUtils.hashPassword(updateData.password);
+            }
 
-            return await this.User.update(
-                updateData,
-                {
-                    where: {
-                        ID: userID
-                    }
-                }
-            );
-        }
-        catch (error) {
-            throw new DbError("Failed to update user", {
-                details: error.message,
-                data: { userID, userData }
+            if (Object.keys(updateData).length === 0) {
+                throw new BadRequestError("No valid fields to update");
+            }
+
+            await this.User.update(updateData, { where: { ID: userID } });
+
+            return await this.User.findByPk(userID);
+        } catch (error) {
+            throw new DbError("Failed to update user", { 
+                details: error.message, 
+                data: { userID, userData } 
             });
         }
     }

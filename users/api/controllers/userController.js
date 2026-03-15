@@ -1,5 +1,6 @@
 const db = require("../db");
 const jwt = require("jsonwebtoken");
+const { isAdmin } = require("../middlewares/authMiddleware");
 
 const { userService } = require("../services")(db);
 
@@ -51,11 +52,12 @@ exports.createUser = async (req, res, next) =>
     }
 }
 
+// itt van valami baj
 exports.updateUser= async (req,res,next)=>{
     const userID = req.userID;
-    const{username,email,password} = req.body||{};
+    const{username,email,password,isAdmin} = req.body||{};
     try {
-        const updatedUser =await userService.updateUser(userID,{username,email,password })
+        const updatedUser =await userService.updateUser(userID,{name: username,email,password,isAdmin })
         res.status(200).json(updatedUser)
     } catch (error) {
         next(error)

@@ -29,5 +29,29 @@ namespace Admin_panel
                 Users.Add(user);
             }
         }
+
+        public async Task<bool> CreateUser(string username, string email, string password)
+        {
+            if (apiService == null) return false;
+            var result = await apiService.CreateUserAsync(username, email, password);
+            if (result) await LoadUsers();
+            return result;
+        }
+
+        public async Task<bool> UpdateUser(string userID, string username, string email, string password, bool isAdmin)
+        {
+            if (apiService == null) return false;
+            var result = await apiService.UpdateUserAsync(userID, username, email, password, isAdmin);
+            if (result) await LoadUsers();
+            return result;
+        }
+
+        public async Task<bool> DeleteUser(string userID)
+        {
+            if (apiService == null) return false;
+            var result = await apiService.DeleteUserAsync(userID);
+            if (result) await LoadUsers();
+            return result;
+        }
     }
 }

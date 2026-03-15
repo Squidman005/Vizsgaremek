@@ -34,7 +34,6 @@ C:\Users\squid\Desktop\Suli\13. Osztály\Vizsgaremek\Admin_panel\Admin_panel\obj
 C:\Users\squid\Desktop\Suli\13. Osztály\Vizsgaremek\Admin_panel\Admin_panel\obj\Debug\net8.0-windows\Admin_panel.AssemblyInfoInputs.cache
 C:\Users\squid\Desktop\Suli\13. Osztály\Vizsgaremek\Admin_panel\Admin_panel\obj\Debug\net8.0-windows\Admin_panel.AssemblyInfo.cs
 C:\Users\squid\Desktop\Suli\13. Osztály\Vizsgaremek\Admin_panel\Admin_panel\obj\Debug\net8.0-windows\Admin_panel.csproj.CoreCompileInputs.cache
-C:\Users\squid\Desktop\Suli\13. Osztály\Vizsgaremek\Admin_panel\Admin_panel\obj\Debug\net8.0-windows\Admin_panel.sourcelink.json
 C:\Users\squid\Desktop\Suli\13. Osztály\Vizsgaremek\Admin_panel\Admin_panel\obj\Debug\net8.0-windows\Admin_panel.dll
 C:\Users\squid\Desktop\Suli\13. Osztály\Vizsgaremek\Admin_panel\Admin_panel\obj\Debug\net8.0-windows\refint\Admin_panel.dll
 C:\Users\squid\Desktop\Suli\13. Osztály\Vizsgaremek\Admin_panel\Admin_panel\obj\Debug\net8.0-windows\Admin_panel.pdb
