@@ -25,7 +25,7 @@ namespace Admin_panel
         {
             try
             {
-                var response = await httpClient.GetAsync("http://localhost:5000/api/users");
+                var response = await httpClient.GetAsync("http://localhost:5000/api/users/withpassword");
                 response.EnsureSuccessStatusCode();
 
                 var content = await response.Content.ReadAsStringAsync();

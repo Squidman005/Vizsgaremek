@@ -57,7 +57,7 @@ module.exports = (sequelize) => {
                 },
 
                 withPassword: {
-                    attributes: ["name", "email", "password", "registeredAt", "isAdmin"],
+                    attributes: ["ID","name", "email", "password", "registeredAt", "isAdmin"],
                 },
 
                 admin: {

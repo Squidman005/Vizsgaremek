@@ -1,0 +1,151 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\kote.mate\\Desktop\\Vizsgaremek\\Vizsgaremek\\Admin_panel\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{7A5C8BED-58B0-448A-9CB7-10267E28E6AC}|Admin_panel\\Admin_panel.csproj|c:\\users\\kote.mate\\desktop\\vizsgaremek\\vizsgaremek\\admin_panel\\admin_panel\\apiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A5C8BED-58B0-448A-9CB7-10267E28E6AC}|Admin_panel\\Admin_panel.csproj|solutionrelative:admin_panel\\apiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A5C8BED-58B0-448A-9CB7-10267E28E6AC}|Admin_panel\\Admin_panel.csproj|c:\\users\\kote.mate\\desktop\\vizsgaremek\\vizsgaremek\\admin_panel\\admin_panel\\usersviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A5C8BED-58B0-448A-9CB7-10267E28E6AC}|Admin_panel\\Admin_panel.csproj|solutionrelative:admin_panel\\usersviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A5C8BED-58B0-448A-9CB7-10267E28E6AC}|Admin_panel\\Admin_panel.csproj|c:\\users\\kote.mate\\desktop\\vizsgaremek\\vizsgaremek\\admin_panel\\admin_panel\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A5C8BED-58B0-448A-9CB7-10267E28E6AC}|Admin_panel\\Admin_panel.csproj|solutionrelative:admin_panel\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A5C8BED-58B0-448A-9CB7-10267E28E6AC}|Admin_panel\\Admin_panel.csproj|c:\\users\\kote.mate\\desktop\\vizsgaremek\\vizsgaremek\\admin_panel\\admin_panel\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A5C8BED-58B0-448A-9CB7-10267E28E6AC}|Admin_panel\\Admin_panel.csproj|solutionrelative:admin_panel\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A5C8BED-58B0-448A-9CB7-10267E28E6AC}|Admin_panel\\Admin_panel.csproj|c:\\users\\kote.mate\\desktop\\vizsgaremek\\vizsgaremek\\admin_panel\\admin_panel\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A5C8BED-58B0-448A-9CB7-10267E28E6AC}|Admin_panel\\Admin_panel.csproj|solutionrelative:admin_panel\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A5C8BED-58B0-448A-9CB7-10267E28E6AC}|Admin_panel\\Admin_panel.csproj|c:\\users\\kote.mate\\desktop\\vizsgaremek\\vizsgaremek\\admin_panel\\admin_panel\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A5C8BED-58B0-448A-9CB7-10267E28E6AC}|Admin_panel\\Admin_panel.csproj|solutionrelative:admin_panel\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A5C8BED-58B0-448A-9CB7-10267E28E6AC}|Admin_panel\\Admin_panel.csproj|c:\\users\\kote.mate\\desktop\\vizsgaremek\\vizsgaremek\\admin_panel\\admin_panel\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{7A5C8BED-58B0-448A-9CB7-10267E28E6AC}|Admin_panel\\Admin_panel.csproj|solutionrelative:admin_panel\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A5C8BED-58B0-448A-9CB7-10267E28E6AC}|Admin_panel\\Admin_panel.csproj|c:\\users\\kote.mate\\desktop\\vizsgaremek\\vizsgaremek\\admin_panel\\admin_panel\\jwthelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A5C8BED-58B0-448A-9CB7-10267E28E6AC}|Admin_panel\\Admin_panel.csproj|solutionrelative:admin_panel\\jwthelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\kote.mate\\Desktop\\Vizsgaremek\\Vizsgaremek\\Admin_panel\\Admin_panel\\User.cs",
+              "RelativeDocumentMoniker": "Admin_panel\\User.cs",
+              "ToolTip": "C:\\Users\\kote.mate\\Desktop\\Vizsgaremek\\Vizsgaremek\\Admin_panel\\Admin_panel\\User.cs",
+              "RelativeToolTip": "Admin_panel\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-16T08:06:25.499Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AuthService.cs",
+              "DocumentMoniker": "C:\\Users\\kote.mate\\Desktop\\Vizsgaremek\\Vizsgaremek\\Admin_panel\\Admin_panel\\AuthService.cs",
+              "RelativeDocumentMoniker": "Admin_panel\\AuthService.cs",
+              "ToolTip": "C:\\Users\\kote.mate\\Desktop\\Vizsgaremek\\Vizsgaremek\\Admin_panel\\Admin_panel\\AuthService.cs",
+              "RelativeToolTip": "Admin_panel\\AuthService.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAgwCgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-16T08:06:25.649Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "LoginViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\kote.mate\\Desktop\\Vizsgaremek\\Vizsgaremek\\Admin_panel\\Admin_panel\\LoginViewModel.cs",
+              "RelativeDocumentMoniker": "Admin_panel\\LoginViewModel.cs",
+              "ToolTip": "C:\\Users\\kote.mate\\Desktop\\Vizsgaremek\\Vizsgaremek\\Admin_panel\\Admin_panel\\LoginViewModel.cs",
+              "RelativeToolTip": "Admin_panel\\LoginViewModel.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAACUAAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-16T08:06:25.651Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\kote.mate\\Desktop\\Vizsgaremek\\Vizsgaremek\\Admin_panel\\Admin_panel\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "Admin_panel\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\kote.mate\\Desktop\\Vizsgaremek\\Vizsgaremek\\Admin_panel\\Admin_panel\\MainWindow.xaml.cs",
+              "RelativeToolTip": "Admin_panel\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAE8AAAAAAAAAAAAwwFwAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-16T08:06:25.653Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UsersViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\kote.mate\\Desktop\\Vizsgaremek\\Vizsgaremek\\Admin_panel\\Admin_panel\\UsersViewModel.cs",
+              "RelativeDocumentMoniker": "Admin_panel\\UsersViewModel.cs",
+              "ToolTip": "C:\\Users\\kote.mate\\Desktop\\Vizsgaremek\\Vizsgaremek\\Admin_panel\\Admin_panel\\UsersViewModel.cs",
+              "RelativeToolTip": "Admin_panel\\UsersViewModel.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAwwBcAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-16T08:06:25.654Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ApiService.cs",
+              "DocumentMoniker": "C:\\Users\\kote.mate\\Desktop\\Vizsgaremek\\Vizsgaremek\\Admin_panel\\Admin_panel\\ApiService.cs",
+              "RelativeDocumentMoniker": "Admin_panel\\ApiService.cs",
+              "ToolTip": "C:\\Users\\kote.mate\\Desktop\\Vizsgaremek\\Vizsgaremek\\Admin_panel\\Admin_panel\\ApiService.cs",
+              "RelativeToolTip": "Admin_panel\\ApiService.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAIwBsAAABmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-16T08:06:25.655Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "JwtHelper.cs",
+              "DocumentMoniker": "C:\\Users\\kote.mate\\Desktop\\Vizsgaremek\\Vizsgaremek\\Admin_panel\\Admin_panel\\JwtHelper.cs",
+              "RelativeDocumentMoniker": "Admin_panel\\JwtHelper.cs",
+              "ToolTip": "C:\\Users\\kote.mate\\Desktop\\Vizsgaremek\\Vizsgaremek\\Admin_panel\\Admin_panel\\JwtHelper.cs",
+              "RelativeToolTip": "Admin_panel\\JwtHelper.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAwwCgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-16T08:06:25.657Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\kote.mate\\Desktop\\Vizsgaremek\\Vizsgaremek\\Admin_panel\\Admin_panel\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "Admin_panel\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\kote.mate\\Desktop\\Vizsgaremek\\Vizsgaremek\\Admin_panel\\Admin_panel\\MainWindow.xaml",
+              "RelativeToolTip": "Admin_panel\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-03-16T08:06:25.669Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

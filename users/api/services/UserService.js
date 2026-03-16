@@ -14,6 +14,11 @@ class UserService
         return await this.userRepository.getUsers();
     }
 
+    async getUsersWithPassword()
+    {
+        return await this.userRepository.getUsersWithPassword();
+    }
+
     async getUser(userID)
     {
         if(!userID) throw new BadRequestError("Missing user identification from payload");

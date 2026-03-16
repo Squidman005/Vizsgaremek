@@ -39,3 +39,24 @@ C:\Users\squid\Desktop\Suli\13. Osztály\Vizsgaremek\Admin_panel\Admin_panel\obj
 C:\Users\squid\Desktop\Suli\13. Osztály\Vizsgaremek\Admin_panel\Admin_panel\obj\Debug\net8.0-windows\Admin_panel.pdb
 C:\Users\squid\Desktop\Suli\13. Osztály\Vizsgaremek\Admin_panel\Admin_panel\obj\Debug\net8.0-windows\Admin_panel.genruntimeconfig.cache
 C:\Users\squid\Desktop\Suli\13. Osztály\Vizsgaremek\Admin_panel\Admin_panel\obj\Debug\net8.0-windows\ref\Admin_panel.dll
+C:\Users\kote.mate\Desktop\Vizsgaremek\Vizsgaremek\Admin_panel\Admin_panel\bin\Debug\net8.0-windows\Admin_panel.exe
+C:\Users\kote.mate\Desktop\Vizsgaremek\Vizsgaremek\Admin_panel\Admin_panel\bin\Debug\net8.0-windows\Admin_panel.deps.json
+C:\Users\kote.mate\Desktop\Vizsgaremek\Vizsgaremek\Admin_panel\Admin_panel\bin\Debug\net8.0-windows\Admin_panel.runtimeconfig.json
+C:\Users\kote.mate\Desktop\Vizsgaremek\Vizsgaremek\Admin_panel\Admin_panel\bin\Debug\net8.0-windows\Admin_panel.dll
+C:\Users\kote.mate\Desktop\Vizsgaremek\Vizsgaremek\Admin_panel\Admin_panel\bin\Debug\net8.0-windows\Admin_panel.pdb
+C:\Users\kote.mate\Desktop\Vizsgaremek\Vizsgaremek\Admin_panel\Admin_panel\obj\Debug\net8.0-windows\MainWindow.g.cs
+C:\Users\kote.mate\Desktop\Vizsgaremek\Vizsgaremek\Admin_panel\Admin_panel\obj\Debug\net8.0-windows\App.g.cs
+C:\Users\kote.mate\Desktop\Vizsgaremek\Vizsgaremek\Admin_panel\Admin_panel\obj\Debug\net8.0-windows\Admin_panel_MarkupCompile.cache
+C:\Users\kote.mate\Desktop\Vizsgaremek\Vizsgaremek\Admin_panel\Admin_panel\obj\Debug\net8.0-windows\Admin_panel_MarkupCompile.lref
+C:\Users\kote.mate\Desktop\Vizsgaremek\Vizsgaremek\Admin_panel\Admin_panel\obj\Debug\net8.0-windows\MainWindow.baml
+C:\Users\kote.mate\Desktop\Vizsgaremek\Vizsgaremek\Admin_panel\Admin_panel\obj\Debug\net8.0-windows\Admin_panel.g.resources
+C:\Users\kote.mate\Desktop\Vizsgaremek\Vizsgaremek\Admin_panel\Admin_panel\obj\Debug\net8.0-windows\Admin_panel.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kote.mate\Desktop\Vizsgaremek\Vizsgaremek\Admin_panel\Admin_panel\obj\Debug\net8.0-windows\Admin_panel.AssemblyInfoInputs.cache
+C:\Users\kote.mate\Desktop\Vizsgaremek\Vizsgaremek\Admin_panel\Admin_panel\obj\Debug\net8.0-windows\Admin_panel.AssemblyInfo.cs
+C:\Users\kote.mate\Desktop\Vizsgaremek\Vizsgaremek\Admin_panel\Admin_panel\obj\Debug\net8.0-windows\Admin_panel.csproj.CoreCompileInputs.cache
+C:\Users\kote.mate\Desktop\Vizsgaremek\Vizsgaremek\Admin_panel\Admin_panel\obj\Debug\net8.0-windows\Admin_panel.sourcelink.json
+C:\Users\kote.mate\Desktop\Vizsgaremek\Vizsgaremek\Admin_panel\Admin_panel\obj\Debug\net8.0-windows\Admin_panel.dll
+C:\Users\kote.mate\Desktop\Vizsgaremek\Vizsgaremek\Admin_panel\Admin_panel\obj\Debug\net8.0-windows\refint\Admin_panel.dll
+C:\Users\kote.mate\Desktop\Vizsgaremek\Vizsgaremek\Admin_panel\Admin_panel\obj\Debug\net8.0-windows\Admin_panel.pdb
+C:\Users\kote.mate\Desktop\Vizsgaremek\Vizsgaremek\Admin_panel\Admin_panel\obj\Debug\net8.0-windows\Admin_panel.genruntimeconfig.cache
+C:\Users\kote.mate\Desktop\Vizsgaremek\Vizsgaremek\Admin_panel\Admin_panel\obj\Debug\net8.0-windows\ref\Admin_panel.dll

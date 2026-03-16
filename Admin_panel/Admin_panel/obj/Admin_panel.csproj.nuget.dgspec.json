@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\squid\\Desktop\\Suli\\13. Osztály\\Vizsgaremek\\Admin_panel\\Admin_panel\\Admin_panel.csproj": {}
+    "C:\\Users\\kote.mate\\Desktop\\Vizsgaremek\\Vizsgaremek\\Admin_panel\\Admin_panel\\Admin_panel.csproj": {}
   },
   "projects": {
-    "C:\\Users\\squid\\Desktop\\Suli\\13. Osztály\\Vizsgaremek\\Admin_panel\\Admin_panel\\Admin_panel.csproj": {
+    "C:\\Users\\kote.mate\\Desktop\\Vizsgaremek\\Vizsgaremek\\Admin_panel\\Admin_panel\\Admin_panel.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\squid\\Desktop\\Suli\\13. Osztály\\Vizsgaremek\\Admin_panel\\Admin_panel\\Admin_panel.csproj",
+        "projectUniqueName": "C:\\Users\\kote.mate\\Desktop\\Vizsgaremek\\Vizsgaremek\\Admin_panel\\Admin_panel\\Admin_panel.csproj",
         "projectName": "Admin_panel",
-        "projectPath": "C:\\Users\\squid\\Desktop\\Suli\\13. Osztály\\Vizsgaremek\\Admin_panel\\Admin_panel\\Admin_panel.csproj",
-        "packagesPath": "C:\\Users\\squid\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\squid\\Desktop\\Suli\\13. Osztály\\Vizsgaremek\\Admin_panel\\Admin_panel\\obj\\",
+        "projectPath": "C:\\Users\\kote.mate\\Desktop\\Vizsgaremek\\Vizsgaremek\\Admin_panel\\Admin_panel\\Admin_panel.csproj",
+        "packagesPath": "C:\\Users\\kote.mate\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\kote.mate\\Desktop\\Vizsgaremek\\Vizsgaremek\\Admin_panel\\Admin_panel\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\squid\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\kote.mate\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -34,7 +38,13 @@
           "warnAsError": [
             "NU1605"
           ]
-        }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net8.0-windows7.0": {
@@ -58,7 +68,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.302/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

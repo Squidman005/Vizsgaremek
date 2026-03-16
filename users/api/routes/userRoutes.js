@@ -7,6 +7,7 @@ const userController = require("../controllers/userController");
 const authMiddleware = require("../middlewares/authMiddleware");
 
 router.get("/", [ authMiddleware.userIsLoggedIn, authMiddleware.isAdmin ], userController.getUsers);
+router.get("/withpassword", [ authMiddleware.userIsLoggedIn, authMiddleware.isAdmin ], userController.getUsersWithPassword);
 
 router.post("/", userController.createUser);
 router.param("userID",(req,res,next,userID)=>{

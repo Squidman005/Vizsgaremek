@@ -16,6 +16,18 @@ exports.getUsers = async (req, res, next) =>
     }
 }
 
+exports.getUsersWithPassword = async (req, res, next) =>
+{
+    try
+    {
+        res.status(200).json(await userService.getUsersWithPassword());
+    }
+    catch(error)
+    {
+        next(error);
+    }
+}
+
 exports.getUser = async (req, res) => {
     const userFromToken = req.user;
 

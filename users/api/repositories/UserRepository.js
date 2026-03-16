@@ -27,6 +27,21 @@ class UserRepository
         }
     }
 
+    async getUsersWithPassword()
+    {
+        try
+        {
+            return await this.User.scope(["withPassword"]).findAll();
+        }
+        catch(error)
+        {
+            throw new DbError("Failed to fetch users", 
+            {
+                details: error.message,
+            });
+        }
+    }
+
     async getUser(userID) {
         try {
             return await this.User.scope(['withPassword']).findOne({
