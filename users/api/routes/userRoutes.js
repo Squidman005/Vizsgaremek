@@ -21,6 +21,8 @@ router.patch("/:userID",userController.updateUser);
 
 router.put("/password", authMiddleware.userIsLoggedIn, userController.updatePassword);
 
+router.put("/username", authMiddleware.userIsLoggedIn, userController.updateUsername);
+
 router.put("/password-reset", userController.resetPasswordByEmail);
 
 router.delete("/:userID",userController.deleteUser)

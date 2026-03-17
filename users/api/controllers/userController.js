@@ -92,6 +92,21 @@ exports.updatePassword = async (req, res, next) => {
     }
 };
 
+exports.updateUsername = async (req, res, next) => {
+    console.log("req.user:", req.user);
+
+    const userID = req.user.userID;  
+    console.log("User ID from token:", userID);
+
+    const { name } = req.body || {};
+
+    try {
+        const updatedUsername = await userService.updateUsername(name, userID);
+        res.status(200).json(updatedUsername);
+    } catch (error) {
+        next(error);
+    }
+};
 
 exports.deleteUser=async(req,res,nexr) =>{
     const userID = req.userID;

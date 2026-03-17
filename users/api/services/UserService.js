@@ -91,6 +91,13 @@ class UserService
 
         return await this.userRepository.updatePassword(password, userID);
     }
+
+    async updateUsername(name, userID) {
+        if (!userID) throw new BadRequestError("Missing User ID");
+        if (!name) throw new BadRequestError("Missing username");
+
+        return await this.userRepository.updateUsername(name, userID);
+    }
     
     async deleteUser(userID){
         if(!userID) throw new BadRequestError("Missing User ID");

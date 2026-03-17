@@ -9,6 +9,8 @@ class UserRepository
     {
         this.User = db.User;
 
+        this.Score = db.Score;
+
         this.sequelize = db.sequelize;
     }
 
@@ -169,6 +171,40 @@ class UserRepository
             return updatedUser;
         } catch (error) {
             throw new DbError("Failed to update password", {
+                details: error.message,
+                data: { userID },
+            });
+        }
+    }
+
+    async updateUsername(name, userID) {
+        if (!userID) throw new DbError("Missing User ID");
+        if (!name) throw new DbError("Missing username");
+
+        try {
+            const user = await this.User.scope("public").findOne({ where: { ID: userID } });
+            
+            await this.Score.update(
+                { userId: name },
+                { where: { userId: user.name } }
+            );
+
+            const [updatedCount] = await this.User.update(
+                { name },
+                { where: { ID: userID } }
+            );
+
+            if (updatedCount === 0) {
+                throw new DbError("No user found to update", { data: { userID } });
+            }
+
+            const updatedUser = await this.User.scope("public").findOne({
+                where: { ID: userID },
+            });
+
+            return updatedUser;
+        } catch (error) {
+            throw new DbError("Failed to update username", {
                 details: error.message,
                 data: { userID },
             });

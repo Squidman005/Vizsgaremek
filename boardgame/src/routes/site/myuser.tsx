@@ -12,6 +12,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "@tanstack/react-query";
 import { Pencil, X } from "lucide-react";
+import { useNavigate } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/site/myuser")({
   component: RouteComponent,
@@ -27,21 +28,52 @@ const passwordSchema = z.object({
 });
 type PasswordSchemaType = z.infer<typeof passwordSchema>;
 
+const usernameSchema = z.object({
+  username: z.string().min(3),
+});
+type UsernameSchemaType = z.infer<typeof usernameSchema>;
+
 const putPassword = (password: string) => {
-  console.log("Sending password:", password);
-  return axiosClient.put("/api/users/password", { password: password });
+  return axiosClient.put("/api/users/password", { password });
 };
 
+const putUsername = (username: string) => {
+  return axiosClient.put("/api/users/username", { name: username });
+};
+
+const logoutRequest = () => {
+  return axiosClient.delete("http://localhost:5000/api/auth/logout", { withCredentials: true });
+};
+
+export function useLogout() {
+  const navigate = useNavigate();
+  return useMutation({
+    mutationFn: logoutRequest,
+    onSuccess() {
+      navigate({ to: "/login" });
+    },
+  });
+}
 
 export function RouteComponent() {
   const { user, loading } = decodeJWT();
   const [scores, setScores] = useState<Score[]>([]);
   const [isEditingPassword, setIsEditingPassword] = useState(false);
+  const [isEditingUsername, setIsEditingUsername] = useState(false);
+  const [usernameError, setUsernameError] = useState("");
+
+  const { mutate: logout } = useLogout();
 
   const form = useForm<PasswordSchemaType>({
     mode: "onChange",
     resolver: zodResolver(passwordSchema),
     defaultValues: { password: "" },
+  });
+
+  const usernameForm = useForm<UsernameSchemaType>({
+    mode: "onChange",
+    resolver: zodResolver(usernameSchema),
+    defaultValues: { username: "" },
   });
 
   const { mutate: changePassword, isPending } = useMutation({
@@ -56,9 +88,30 @@ export function RouteComponent() {
     },
   });
 
+  const { mutate: changeUsername, isPending: isPendingUsername } = useMutation({
+    mutationFn: (data: UsernameSchemaType) => putUsername(data.username),
+    onSuccess: () => {
+      usernameForm.reset();
+      setIsEditingUsername(false);
+      logout();
+    },
+    onError(error: any) {
+      const message = error.response?.data?.message || error.message;
+      if (message.toLowerCase().includes("exists")) {
+        setUsernameError("Username already exists");
+      } else {
+        console.log(message);
+      }
+    },
+  });
+
   function onSubmit(values: PasswordSchemaType) {
-    console.log("Password to change to:", values.password);
     changePassword(values);
+  }
+
+  function onSubmitUsername(values: UsernameSchemaType) {
+    setUsernameError("");
+    changeUsername(values);
   }
 
   useEffect(() => {
@@ -86,15 +139,58 @@ export function RouteComponent() {
                 <p className="text-gray-400 text-sm">Username</p>
                 <p className="text-blue-400 text-xl font-bold">{user.username}</p>
               </div>
-              <Pencil className="cursor-pointer opacity-60" size={18} />
+              {isEditingUsername ? (
+                <X
+                  className="cursor-pointer text-red-400"
+                  size={18}
+                  onClick={() => {
+                    setIsEditingUsername(false);
+                    usernameForm.reset();
+                    setUsernameError("");
+                  }}
+                />
+              ) : (
+                <Pencil
+                  className="cursor-pointer"
+                  size={18}
+                  onClick={() => setIsEditingUsername(true)}
+                />
+              )}
             </div>
-
+            {isEditingUsername && (
+              <Form {...usernameForm}>
+                <form
+                  onSubmit={usernameForm.handleSubmit(onSubmitUsername)}
+                  className="space-y-4 pt-4 border-t border-gray-600"
+                >
+                  <FormField
+                    control={usernameForm.control}
+                    name="username"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="text-white">New Username</FormLabel>
+                        <FormControl>
+                          <Input {...field} className="bg-gray-700 text-white border-gray-600" />
+                        </FormControl>
+                        <FormMessage className="text-red-400">{usernameError}</FormMessage>
+                      </FormItem>
+                    )}
+                  />
+                  <Button
+                    type="submit"
+                    disabled={isPendingUsername}
+                    className="w-full bg-blue-600 hover:bg-blue-700 text-white"
+                  >
+                    Change Username
+                  </Button>
+                </form>
+              </Form>
+            )}
             <div className="flex justify-between items-center">
               <div>
                 <p className="text-gray-400 text-sm">Password</p>
                 <p className="font-bold tracking-widest">************</p>
               </div>
-
               {isEditingPassword ? (
                 <X
                   className="cursor-pointer text-red-400"
@@ -112,7 +208,6 @@ export function RouteComponent() {
                 />
               )}
             </div>
-
             {isEditingPassword && (
               <Form {...form}>
                 <form
@@ -126,11 +221,7 @@ export function RouteComponent() {
                       <FormItem>
                         <FormLabel className="text-white">New Password</FormLabel>
                         <FormControl>
-                          <Input
-                            type="password"
-                            {...field}
-                            className="bg-gray-700 text-white border-gray-600"
-                          />
+                          <Input type="password" {...field} className="bg-gray-700 text-white border-gray-600" />
                         </FormControl>
                         <FormMessage className="text-red-400" />
                       </FormItem>
@@ -148,7 +239,6 @@ export function RouteComponent() {
             )}
           </CardContent>
         </Card>
-
         <Card className="w-full max-w-md text-center shadow-md rounded-xl p-8">
           <CardHeader>
             <CardTitle className="text-2xl font-semibold mb-4">Your Scores</CardTitle>
@@ -159,10 +249,7 @@ export function RouteComponent() {
                 <p>No scores yet.</p>
               ) : (
                 scores.map((s) => (
-                  <li
-                    key={s.gamename}
-                    className="flex justify-between bg-gray-100 dark:bg-gray-800 p-2 rounded"
-                  >
+                  <li key={s.gamename} className="flex justify-between bg-gray-100 dark:bg-gray-800 p-2 rounded">
                     <span className="font-medium">{s.gamename}</span>
                     <span className="font-bold text-green-500">{s.score}</span>
                   </li>
