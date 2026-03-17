@@ -96,7 +96,7 @@ export function LoginForm({ className, ...props }: React.ComponentProps<"div">) 
                   <FormItem>
                     <FormLabel className="text-white">Jelszó</FormLabel>
                     <FormControl>
-                      <Input placeholder="********" {...field} className="bg-gray-700 text-white border-gray-600 placeholder-gray-400" />
+                      <Input placeholder="********" type="password" {...field} className="bg-gray-700 text-white border-gray-600 placeholder-gray-400" />
                     </FormControl>
                     <FormMessage className="text-red-400" />
                   </FormItem>

@@ -69,7 +69,7 @@ function RouteComponent() {
               martina.magyar07@gmail.com
             </p>
             <p className="flex justify-between bg-gray-700 p-3 rounded">
-              zsidakovits.balint@ckik.hu
+              zsbalint07@gmail.com
             </p>
           </CardContent>
         </Card>
