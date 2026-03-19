@@ -108,11 +108,12 @@ exports.updateUsername = async (req, res, next) => {
     }
 };
 
-exports.deleteUser=async(req,res,nexr) =>{
-    const userID = req.userID;
+exports.deleteUser=async(req,res,next) =>{
+    const userID = req.params.userID;
+    console.log("User ID to delete:", userID);
     try {
-        await userService.deleteUser(userID);
-        res.status(204).json({ message: "OK" });
+        const deleteUser = await userService.deleteUser(userID);
+        res.status(204).json(deleteUser);
     } catch (error) {
         next(error)
     }

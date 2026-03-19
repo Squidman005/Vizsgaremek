@@ -42,7 +42,11 @@ const putUsername = (username: string) => {
 };
 
 const logoutRequest = () => {
-  return axiosClient.delete("http://localhost:5000/api/auth/logout", { withCredentials: true });
+  return axiosClient.delete("/api/auth/logout", { withCredentials: true });
+};
+
+const deleteUserRequest = (id: string) => {
+  return axiosClient.delete(`/api/users/${id}`, { withCredentials: true });
 };
 
 export function useLogout() {
@@ -63,6 +67,7 @@ export function RouteComponent() {
   const [usernameError, setUsernameError] = useState("");
 
   const { mutate: logout } = useLogout();
+  const navigate = useNavigate();
 
   const form = useForm<PasswordSchemaType>({
     mode: "onChange",
@@ -96,12 +101,18 @@ export function RouteComponent() {
       logout();
     },
     onError(error: any) {
-      const message = error.response?.data?.message || error.message;
-      if (message.toLowerCase().includes("exists")) {
-        setUsernameError("Username already exists");
-      } else {
-        console.log(message);
-      }
+      console.log(error.response?.data?.message || error.message);
+    },
+  });
+
+  const { mutate: deleteUser, isPending: isDeleting } = useMutation({
+    mutationFn: () => deleteUserRequest(user.userID),
+    onSuccess: () => {
+      navigate({ to: "/login" });
+    },
+    onError(error: any) {
+      console.log(user.userID);
+      console.log(error.response?.data?.message || error.message);
     },
   });
 
@@ -112,6 +123,22 @@ export function RouteComponent() {
   function onSubmitUsername(values: UsernameSchemaType) {
     setUsernameError("");
     changeUsername(values);
+  }
+
+  function handleDeleteUser() {
+    const confirmed = window.confirm(
+      "Are you sure you want to delete your account? This action cannot be undone."
+    );
+    if (!confirmed) return;
+
+    logout(undefined, {
+      onSuccess: () => {
+        deleteUser();
+      },
+      onError: (err) => {
+        console.error("Failed to log out before deleting user:", err);
+      },
+    });
   }
 
   useEffect(() => {
@@ -237,6 +264,15 @@ export function RouteComponent() {
                 </form>
               </Form>
             )}
+            <div className="pt-4 border-t border-gray-600">
+              <Button
+                onClick={handleDeleteUser}
+                disabled={isDeleting}
+                className="w-full bg-red-600 hover:bg-red-700 text-white"
+              >
+                Delete Account
+              </Button>
+            </div>
           </CardContent>
         </Card>
         <Card className="w-full max-w-md text-center shadow-md rounded-xl p-8">

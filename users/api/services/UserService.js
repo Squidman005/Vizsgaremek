@@ -101,10 +101,7 @@ class UserService
     
     async deleteUser(userID){
         if(!userID) throw new BadRequestError("Missing User ID");
-        const user = await this.userRepository.deleteUser(userID);
-        if(!user) throw new NotFoundError("Cannot find score whit this ID",{data:userID});
-        return {success:true};
-
+        return await this.userRepository.deleteUser(userID);
     }
 
     async resetPasswordByEmail(email, password) {

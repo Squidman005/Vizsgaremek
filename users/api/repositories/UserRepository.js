@@ -77,23 +77,42 @@ class UserRepository
         }
     }
 
-    async deleteUser(userID)
-    {
-        try
-        {
-            return await this.User.destroy(
-            {
-                where:
-                {
-                    [Op.or]: [ { ID: userID }, { name: userID }, { email: userID } ],
-                }
+    async deleteUser(userID) {
+        console.log("deleteUser service called with ID:", userID);
+
+        const t = await this.User.sequelize.transaction();
+        console.log("Transaction started");
+
+        try {
+            const user = await this.User.scope("public").findOne({ where: { ID: userID } });
+
+            if (!user) {
+                await t.rollback();
+                throw new DbError("User not found", { data: { userID } });
+            }
+
+            await this.Score.destroy({
+                where: { userId: user.name },
+                transaction: t
+            });
+
+            await this.User.destroy({
+                where: { ID: userID },
+                transaction: t
+            });
+
+            await t.commit();
+            return true;
+        } catch (error) {
+            console.log("Error occurred, rolling back transaction:", error);
+            await t.rollback();
+            throw new DbError("Failed to delete user from database", {
+                details: error.sqlMessage || error.message,
+                data: { userID }
             });
         }
-        catch(error)
-        {
-            throw new DbError("Failed to delete user from database", { details: error.sqlMessage, data: { userID } });
-        }
     }
+
 
     // async updateUser(userData, userID = userData.ID) {
     //     try {
