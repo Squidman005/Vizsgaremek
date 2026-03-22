@@ -65,17 +65,23 @@ exports.createUser = async (req, res, next) =>
 }
 
 // itt van valami baj
-exports.updateUser= async (req,res,next)=>{
+exports.updateUser = async (req, res, next) => {
     const userID = req.userID;
-    const{username,email,password,isAdmin} = req.body||{};
-    try {
-        const updatedUser =await userService.updateUser(userID,{name: username,email,password,isAdmin })
-        res.status(200).json(updatedUser)
-    } catch (error) {
-        next(error)
-    }
-}
+    const { username, email, password, isAdmin } = req.body || {};
 
+    try {
+        const updatedUser = await userService.updateUser(userID, {
+            name: username,
+            email,
+            password,
+            isAdmin
+        });
+
+        res.status(200).json(updatedUser);
+    } catch (error) {
+        next(error);
+    }
+};
 exports.updatePassword = async (req, res, next) => {
     console.log("req.user:", req.user);
 

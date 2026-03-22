@@ -1,4 +1,4 @@
-const { DbError } = require("../errors");
+const { DbError, BadRequestError } = require("../errors");
 const bcrypt = require("bcrypt");
 const { Op } = require("sequelize");
 const authUtils = require("../utilities/authUtils");
@@ -143,31 +143,41 @@ class UserRepository
     // }
 
     async updateUser(userID, userData) {
-        try {
-            const allowedFields = ["name", "email", "password", "isAdmin"];
-            const updateData = Object.fromEntries(
-                Object.entries(userData)
-                    .filter(([key, value]) => allowedFields.includes(key) && value !== undefined)
-            );
+    try {
+        const allowedFields = ["name", "email", "password", "isAdmin"];
 
-            if (updateData.password) {
-                updateData.password = authUtils.hashPassword(updateData.password);
-            }
+        const updateData = Object.fromEntries(
+            Object.entries(userData).filter(
+                ([key, value]) =>
+                    allowedFields.includes(key) && value !== undefined
+            )
+        );
 
-            if (Object.keys(updateData).length === 0) {
-                throw new BadRequestError("No valid fields to update");
-            }
-
-            await this.User.update(updateData, { where: { ID: userID } });
-
-            return await this.User.findByPk(userID);
-        } catch (error) {
-            throw new DbError("Failed to update user", { 
-                details: error.message, 
-                data: { userID, userData } 
-            });
+        if (updateData.password) {
+            updateData.password = authUtils.hashPassword(updateData.password);
         }
+
+        if (Object.keys(updateData).length === 0) {
+            throw new BadRequestError("No valid fields to update");
+        }
+
+        const [updatedRows] = await this.User.update(updateData, {
+            where: { ID: userID },
+        });
+
+        if (updatedRows === 0) {
+            throw new NotFoundError("User not found");
+        }
+
+        return await this.User.findByPk(userID);
+    } catch (error) {
+        throw new DbError("Failed to update user", {
+            details: error.message,
+            data: { userID, userData },
+        });
     }
+}
+
 
     async updatePassword(password, userID) {
         if (!userID) throw new DbError("Missing User ID");

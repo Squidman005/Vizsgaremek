@@ -57,33 +57,43 @@ class UserService
 
         return await this.userRepository.createUser(userData);
     }
-    async updateUser(userID,userData){
-        if(!userID) throw new BadRequestError("Missing User ID");
-        if (!userData || Object.keys(userData).length === 0) throw new BadRequestError("Missing user data", { data: userID });
-
-        if(!userData.name) throw new BadRequestError("Missing username from payload",
-        {
-            data: userData,
-        });
-
-        if(!userData.password) throw new BadRequestError("Missing password from payload", 
-        {
-            data: userData,
-        });
-
-        if(!userData.email) throw new BadRequestError("Missing email from payload", 
-        {
-            data: userData,
-        });
-
-        if (userData.isAdmin === undefined || userData.isAdmin === null) throw new BadRequestError("Missing isAdmin from payload",
-        { 
-            data: userData 
-        });
-
-        return await this.userRepository.updateUser(userData,userID)
-
+   async updateUser(userID, userData) {
+    if (!userID) {
+        throw new BadRequestError("Missing User ID");
     }
+
+    if (!userData || Object.keys(userData).length === 0) {
+        throw new BadRequestError("Missing user data", { data: userID });
+    }
+
+    if (!userData.name) {
+        throw new BadRequestError("Missing username from payload", {
+            data: userData,
+        });
+    }
+
+    if (!userData.password) {
+        throw new BadRequestError("Missing password from payload", {
+            data: userData,
+        });
+    }
+
+    if (!userData.email) {
+        throw new BadRequestError("Missing email from payload", {
+            data: userData,
+        });
+    }
+
+    if (userData.isAdmin === undefined || userData.isAdmin === null) {
+        throw new BadRequestError("Missing isAdmin from payload", {
+            data: userData,
+        });
+    }
+
+    // ✅ FIXED ORDER HERE
+    return await this.userRepository.updateUser(userID, userData);
+}
+
 
     async updatePassword(password, userID) {
         if (!userID) throw new BadRequestError("Missing User ID");
