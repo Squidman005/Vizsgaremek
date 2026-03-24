@@ -52,7 +52,7 @@
             </GroupBox>
 
             <!-- USERS DATA GRID -->
-            <DataGrid Grid.Row="2" Name="DataGrid_Users" ItemsSource="{Binding Users}" AutoGenerateColumns="False" CanUserAddRows="False" Margin="5">
+            <DataGrid Grid.Row="2" Name="DataGrid_Users" ItemsSource="{Binding Users}" AutoGenerateColumns="False" CanUserAddRows="False" Margin="5" SelectionChanged="DataGrid_Users_SelectionChanged">
                 <DataGrid.Columns>
                     <DataGridTextColumn Binding="{Binding ID}" Header="Id" Width="50"/>
                     <DataGridTextColumn Binding="{Binding Name}" Header="Name" Width="150"/>

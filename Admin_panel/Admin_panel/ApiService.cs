@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
+using System.Net.Http.Json;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
@@ -20,7 +21,8 @@ namespace Admin_panel
 
             handler.CookieContainer.Add(new Uri("http://localhost:5000"), new Cookie("user_token", token));
         }
-
+        public ApiService() { }
+        //________________USER_______________________
         public async Task<List<User>> GetUsersAsync()
         {
             try
@@ -113,5 +115,104 @@ namespace Admin_panel
                 return false;
             }
         }
+        //________________SCORE_______________________
+        private readonly HttpClient httpClientScore = new HttpClient();
+
+        public async Task<List<Score>> GetScoresAsync() {
+            try
+            {
+                var response = await httpClientScore.GetFromJsonAsync<List<Score>>("http://localhost:5000/api/score");
+                return response ?? new();
+            }
+            catch (Exception ex) {
+                Console.WriteLine($"Hiba történt: {ex.Message}");
+                return new();
+            }
+        }
+        public async Task<List<Score>> GetTopTenAsync(string gamename)
+        {
+            try
+            {
+                var response = await httpClientScore.GetFromJsonAsync<List<Score>>($"http://localhost:5000/api/score/{gamename}");
+                return response ?? new();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Hiba: {ex.Message}");
+                return new();
+            }
+        }
+        public async Task<List<Score>> GetPlayerBestScoresAsync(string playername)
+        {
+            try
+            {
+                var response = await httpClientScore.GetFromJsonAsync<List<Score>>($"http://localhost:5000/api/score/player/{playername}");
+                return response ?? new();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Hiba: {ex.Message}");
+                return new();
+            }
+        }
+        public async Task<Score?> GetScoreByIdAsync(int id)
+        {
+            try
+            {
+                return await httpClientScore.GetFromJsonAsync<Score>($"http://localhost:5000/api/score/{id}");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Hiba: {ex.Message}");
+                return new();
+            }
+        }
+        public async Task<bool> AddScoreAsync(Score score)
+        {
+            try
+            {
+                var response = await httpClientScore.PostAsJsonAsync("http://localhost:5000/api/score//", score);
+                return response.IsSuccessStatusCode;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Hiba: {ex.Message}");
+                return new();
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        public async Task<bool> UpdateScoreAsync(int id, Score score)
+        {
+            try
+            {
+                var response = await httpClientScore.PatchAsJsonAsync($"http://localhost:5000/api/score/{id}", score);
+                return response.IsSuccessStatusCode;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Hiba: {ex.Message}");
+                return new();
+            }
+        }
+
+        public async Task<bool> DeleteScoreAsync(int id)
+        {
+            try
+            {
+                var response = await httpClientScore.DeleteAsync($"http://localhost:5000/api/score/{id}");
+                return response.IsSuccessStatusCode;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Hiba: {ex.Message}");
+                return new();
+            }
+        }
+
+
+
     }
 }

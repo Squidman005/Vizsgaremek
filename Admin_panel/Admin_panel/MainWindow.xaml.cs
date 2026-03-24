@@ -89,8 +89,6 @@ namespace Admin_panel
             UpdateUserGroupBox.Visibility = Visibility.Visible;
         }
 
-
-        // EZMEMJÓ ÁÁÁÁÁÁÁÁ
         private async void UpdateUser_Click(object sender, RoutedEventArgs e)
         {
             if (userBeingEdited == null || currentToken == null) return;
@@ -144,6 +142,15 @@ namespace Admin_panel
             else
             {
                 MessageBox.Show("Failed to delete user");
+            }
+        }
+
+        private void DataGrid_Users_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (DataGrid_Users.SelectedItem is User selectedUser)
+            {
+                var scoreWindow = new ScoreWindow(selectedUser.Name);
+                scoreWindow.ShowDialog();
             }
         }
     }

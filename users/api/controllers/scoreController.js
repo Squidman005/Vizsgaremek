@@ -64,7 +64,7 @@ exports.updateScore = async (req, res, next) => {
 };
 
 exports.deleteScore = async (req, res, next) => {
-    const scoreID = req.scoreID;
+    const scoreID = req.params.scoreID;
     try {
         await scoreService.deleteScore(scoreID);
         res.status(204).send();

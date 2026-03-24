@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Admin_panel")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+40ccbdb30928ad8021337369675a4ff9cbb993de")]
 [assembly: System.Reflection.AssemblyProductAttribute("Admin_panel")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Admin_panel")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

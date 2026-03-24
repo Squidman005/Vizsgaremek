@@ -31,7 +31,7 @@ router.post("/",scoreController.createScore);
 
 router.put("/",scoreController.updateScore);
 
-router.delete("/",scoreController.deleteScore)
+router.delete("/:scoreID",scoreController.deleteScore)
 
 router.param("scoreID", (req, res, next, scoreID) => 
 {

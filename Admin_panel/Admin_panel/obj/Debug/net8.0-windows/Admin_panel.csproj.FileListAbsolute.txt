@@ -61,3 +61,5 @@ C:\Users\kote.mate\Desktop\Vizsgaremek\Vizsgaremek\Admin_panel\Admin_panel\obj\D
 C:\Users\kote.mate\Desktop\Vizsgaremek\Vizsgaremek\Admin_panel\Admin_panel\obj\Debug\net8.0-windows\Admin_panel.genruntimeconfig.cache
 C:\Users\kote.mate\Desktop\Vizsgaremek\Vizsgaremek\Admin_panel\Admin_panel\obj\Debug\net8.0-windows\ref\Admin_panel.dll
 C:\Users\squid\Desktop\Suli\13. Osztály\Vizsgaremek\Admin_panel\Admin_panel\obj\Debug\net8.0-windows\Admin_panel.sourcelink.json
+C:\Users\squid\Desktop\Suli\13. Osztály\Vizsgaremek\Admin_panel\Admin_panel\obj\Debug\net8.0-windows\ScoreWindow.baml
+C:\Users\squid\Desktop\Suli\13. Osztály\Vizsgaremek\Admin_panel\Admin_panel\obj\Debug\net8.0-windows\ScoreWindow.g.cs
