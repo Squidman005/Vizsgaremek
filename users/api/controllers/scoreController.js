@@ -21,7 +21,7 @@ exports.getScore = async (req, res, next) => {
     }
 };
 
-exports.getScoresTopTen=async(req,res,next)=>{
+exports.getScoresTopTen = async (req, res, next) => {
     const gamename = req.gamename;
      try {
         const scores = await scoreService.getScoresTopTen(gamename);
@@ -41,7 +41,6 @@ exports.getPlayerBestScores = async (req, res, next) => {
     }
 };
 
-
 exports.createScore = async (req, res, next) => {
     const { userId, score, gamename } = req.body || {};
     try {
@@ -53,7 +52,7 @@ exports.createScore = async (req, res, next) => {
 };
 
 exports.updateScore = async (req, res, next) => {
-    const scoreID = req.scoreID;
+    const scoreID = req.scoreID || req.body.ID; 
     const { userId, score, gamename } = req.body || {};
     try {
         const updatedScore = await scoreService.updateScore(scoreID, { userId, score, gamename });
@@ -64,10 +63,10 @@ exports.updateScore = async (req, res, next) => {
 };
 
 exports.deleteScore = async (req, res, next) => {
-    const scoreID = req.params.scoreID;
+    const scoreID = req.scoreID;
     try {
-        await scoreService.deleteScore(scoreID);
-        res.status(204).send();
+        const result = await scoreService.deleteScore(scoreID);
+        res.status(204).json(result);
     } catch (error) {
         next(error);
     }

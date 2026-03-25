@@ -87,7 +87,7 @@ class ScoreRepository{
              return await this.Score.destroy({
                 where:{
                     [Op.or]:[{ID:scoreID},{userID:scoreID},{score:scoreID},{gamename:scoreID}]
-                }
+                },
             });
         } catch (error) {
             throw new DbError("Failed to delete score from database",{
@@ -101,7 +101,7 @@ class ScoreRepository{
             return await this.Score.update({...scoreData},{
                 where:{
                     ID:scoreID,
-                }
+                },
             });
         } catch (error) {
             throw new DbError("Failed to update score,",{
