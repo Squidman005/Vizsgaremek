@@ -26,10 +26,11 @@ router.param("playername", (req, res, next, playername) => {
 
 router.get("/player/:playername", scoreController.getPlayerBestScores);
 
+router.get("/player/all/:playername", scoreController.getPlayerScores);
 
 router.post("/",scoreController.createScore);
 
-router.put("/",scoreController.updateScore);
+router.patch("/:scoreID",scoreController.updateScore);
 
 router.delete("/:scoreID",scoreController.deleteScore)
 

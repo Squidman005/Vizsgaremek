@@ -16,7 +16,7 @@ namespace Admin_panel
         public string UserID { get; set; }
 
         [JsonPropertyName("score")]
-        public string Email { get; set; }
+        public int ScoreValue { get; set; }
 
         [JsonPropertyName("gamename")]
         public string Gamename { get; set; }

@@ -142,11 +142,11 @@ namespace Admin_panel
                 return new();
             }
         }
-        public async Task<List<Score>> GetPlayerBestScoresAsync(string playername)
+        public async Task<List<Score>> GetPlayerScoresAsync(string playername)
         {
             try
             {
-                var response = await httpClientScore.GetFromJsonAsync<List<Score>>($"http://localhost:5000/api/score/player/{playername}");
+                var response = await httpClientScore.GetFromJsonAsync<List<Score>>($"http://localhost:5000/api/score/player/all/{playername}");
                 return response ?? new();
             }
             catch (Exception ex)

@@ -58,6 +58,23 @@ class ScoreRepository{
         }
     }
 
+    async getPlayerScores(playername) {
+        try {
+            const results = await this.Score.findAll({
+                where: { userID: playername },
+                order: [["score", "DESC"]],
+                raw: true
+            });
+
+            return results;
+        } catch (error) {
+            throw new DbError("Failed to fetch player's scores", {
+                details: error.message,
+                data: playername
+            });
+        }
+    }
+
     async getScore(scoreID){
         try {
             return await this.Score.scope(["public"]).findOne({

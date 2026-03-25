@@ -41,6 +41,16 @@ exports.getPlayerBestScores = async (req, res, next) => {
     }
 };
 
+exports.getPlayerScores = async (req, res, next) => {
+    const playername = req.params.playername;
+    try {
+        const allScores = await scoreService.getPlayerScores(playername);
+        res.status(200).json(allScores);
+    } catch (error) {
+        next(error);
+    }
+};
+
 exports.createScore = async (req, res, next) => {
     const { userId, score, gamename } = req.body || {};
     try {

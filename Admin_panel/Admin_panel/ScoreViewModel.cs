@@ -39,7 +39,7 @@ namespace Admin_panel
         public async Task LoadPlayerBest(string playername)
         {
             Scores.Clear();
-            var adatok = await apiService.GetPlayerBestScoresAsync(playername);
+            var adatok = await apiService.GetPlayerScoresAsync(playername);
             foreach (var score in adatok)
             {
                 Scores.Add(score);
