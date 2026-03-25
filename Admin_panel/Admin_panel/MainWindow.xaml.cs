@@ -145,13 +145,18 @@ namespace Admin_panel
             }
         }
 
-        private void DataGrid_Users_SelectionChanged(object sender, SelectionChangedEventArgs e)
+
+        private void Scores_Click(object sender, RoutedEventArgs e)
         {
-            if (DataGrid_Users.SelectedItem is User selectedUser)
+            var button = sender as Button;
+            var user = button.DataContext as User;
+
+            if (user != null)
             {
-                var scoreWindow = new ScoreWindow(selectedUser.Name);
-                scoreWindow.ShowDialog();
+                var scoreWindow = new ScoreWindow(user.Name.ToString());
+                scoreWindow.Show();
             }
         }
+
     }
 }
