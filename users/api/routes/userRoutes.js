@@ -1,5 +1,3 @@
-//a password reset utan a kiaditt userIDvel rendelkezo userre generalni kellene egy 7 karakterbol allo hash-t ami az uj jelszo lesz Ã©s B criptel titkositva
-
 const express = require("express");
 
 const router = express.Router();

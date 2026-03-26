@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Json;
+using System.Security.Policy;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
@@ -14,12 +15,15 @@ namespace Admin_panel
     {
         private readonly HttpClient httpClient;
 
+        // Also change in MainWindow
+        public string url = "http://localhost:5000";
+
         public ApiService(string token)
         {
             var handler = new HttpClientHandler { UseCookies = true };
             httpClient = new HttpClient(handler);
 
-            handler.CookieContainer.Add(new Uri("http://localhost:5000"), new Cookie("user_token", token));
+            handler.CookieContainer.Add(new Uri(url), new Cookie("user_token", token));
         }
         public ApiService() { }
         //________________USER_______________________
@@ -27,7 +31,7 @@ namespace Admin_panel
         {
             try
             {
-                var response = await httpClient.GetAsync("http://localhost:5000/api/users/withpassword");
+                var response = await httpClient.GetAsync(url+"/api/users/withpassword");
                 response.EnsureSuccessStatusCode();
 
                 var content = await response.Content.ReadAsStringAsync();
@@ -46,7 +50,7 @@ namespace Admin_panel
         {
             try
             {
-                var response = await httpClient.GetAsync($"http://localhost:5000/api/users/{userID}");
+                var response = await httpClient.GetAsync(url+$"/api/users/{userID}");
                 response.EnsureSuccessStatusCode();
 
                 var content = await response.Content.ReadAsStringAsync();
@@ -69,7 +73,7 @@ namespace Admin_panel
                 var json = JsonSerializer.Serialize(userObj);
                 var content = new StringContent(json, Encoding.UTF8, "application/json");
 
-                var response = await httpClient.PostAsync("http://localhost:5000/api/users", content);
+                var response = await httpClient.PostAsync(url+"/api/users", content);
                 return response.IsSuccessStatusCode;
             }
             catch (Exception ex)
@@ -87,7 +91,7 @@ namespace Admin_panel
                 var json = JsonSerializer.Serialize(userObj);
                 var content = new StringContent(json, Encoding.UTF8, "application/json");
 
-                var request = new HttpRequestMessage(new HttpMethod("PATCH"), $"http://localhost:5000/api/users/{userID}")
+                var request = new HttpRequestMessage(new HttpMethod("PATCH"), url+$"/api/users/{userID}")
                 {
                     Content = content
                 };
@@ -106,7 +110,7 @@ namespace Admin_panel
         {
             try
             {
-                var response = await httpClient.DeleteAsync($"http://localhost:5000/api/users/{userID}");
+                var response = await httpClient.DeleteAsync(url + $"/api/users/{userID}");
                 return response.IsSuccessStatusCode;
             }
             catch (Exception ex)
@@ -121,7 +125,7 @@ namespace Admin_panel
         public async Task<List<Score>> GetScoresAsync() {
             try
             {
-                var response = await httpClientScore.GetFromJsonAsync<List<Score>>("http://localhost:5000/api/score");
+                var response = await httpClientScore.GetFromJsonAsync<List<Score>>(url+"/api/score");
                 return response ?? new();
             }
             catch (Exception ex) {
@@ -133,7 +137,7 @@ namespace Admin_panel
         {
             try
             {
-                var response = await httpClientScore.GetFromJsonAsync<List<Score>>($"http://localhost:5000/api/score/{gamename}");
+                var response = await httpClientScore.GetFromJsonAsync<List<Score>>(url+$"/api/score/{gamename}");
                 return response ?? new();
             }
             catch (Exception ex)
@@ -146,7 +150,7 @@ namespace Admin_panel
         {
             try
             {
-                var response = await httpClientScore.GetFromJsonAsync<List<Score>>($"http://localhost:5000/api/score/player/all/{playername}");
+                var response = await httpClientScore.GetFromJsonAsync<List<Score>>(url+$"/api/score/player/all/{playername}");
                 return response ?? new();
             }
             catch (Exception ex)
@@ -159,7 +163,7 @@ namespace Admin_panel
         {
             try
             {
-                return await httpClientScore.GetFromJsonAsync<Score>($"http://localhost:5000/api/score/{id}");
+                return await httpClientScore.GetFromJsonAsync<Score>(url+$"/api/score/{id}");
             }
             catch (Exception ex)
             {
@@ -171,7 +175,7 @@ namespace Admin_panel
         {
             try
             {
-                var response = await httpClientScore.PostAsJsonAsync("http://localhost:5000/api/score//", score);
+                var response = await httpClientScore.PostAsJsonAsync(url+"/api/score//", score);
                 return response.IsSuccessStatusCode;
             }
             catch (Exception ex)
@@ -188,7 +192,7 @@ namespace Admin_panel
         {
             try
             {
-                var response = await httpClientScore.PatchAsJsonAsync($"http://localhost:5000/api/score/{id}", score);
+                var response = await httpClientScore.PatchAsJsonAsync(url+$"/api/score/{id}", score);
                 return response.IsSuccessStatusCode;
             }
             catch (Exception ex)
@@ -202,7 +206,7 @@ namespace Admin_panel
         {
             try
             {
-                var response = await httpClientScore.DeleteAsync($"http://localhost:5000/api/score/{id}");
+                var response = await httpClientScore.DeleteAsync(url+$"/api/score/{id}");
                 return response.IsSuccessStatusCode;
             }
             catch (Exception ex)

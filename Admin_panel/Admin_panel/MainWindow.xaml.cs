@@ -13,6 +13,9 @@ namespace Admin_panel
         private string? currentToken;
         private User? userBeingEdited;
 
+        // Also change in ApiService
+        public string url = "http://localhost:5000";
+
         public MainWindow()
         {
             InitializeComponent();
@@ -61,7 +64,7 @@ namespace Admin_panel
 
             using var client = new HttpClient();
             client.DefaultRequestHeaders.Add("Cookie", $"user_token={currentToken}");
-            var response = await client.PostAsync("http://localhost:5000/api/users", content);
+            var response = await client.PostAsync(url+"/api/users", content);
 
             if (response.IsSuccessStatusCode)
             {
@@ -106,7 +109,7 @@ namespace Admin_panel
 
             using var client = new HttpClient();
             client.DefaultRequestHeaders.Add("Cookie", $"user_token={currentToken}");
-            var response = await client.PatchAsync($"http://localhost:5000/api/users/{userBeingEdited.ID}", content);
+            var response = await client.PatchAsync(url+$"/api/users/{userBeingEdited.ID}", content);
 
             if (response.IsSuccessStatusCode)
             {
@@ -132,7 +135,7 @@ namespace Admin_panel
 
             using var client = new HttpClient();
             client.DefaultRequestHeaders.Add("Cookie", $"user_token={currentToken}");
-            var response = await client.DeleteAsync($"http://localhost:5000/api/users/{user.ID}");
+            var response = await client.DeleteAsync(url+$"/api/users/{user.ID}");
 
             if (response.IsSuccessStatusCode)
             {
