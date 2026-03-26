@@ -223,7 +223,7 @@ describe("API Integrációs Tesztek", () => {
             });
         });
 
-        describe("PUT /api/score", () => {
+        describe("PATCH /api/score/:scoreID", () => {
             it("Sikeresen frissíti egy meglévő pontszámot", async () => {
                 const updatedScoreData = {
                     ID: scoreIdToUpdate,
@@ -233,8 +233,7 @@ describe("API Integrációs Tesztek", () => {
                 };
 
                 const response = await request(app)
-                    .put("/api/score")
-                    .send(updatedScoreData);
+                    .patch(`/api/score/${scoreIdToUpdate.toString()}`).send(updatedScoreData);
 
                 expect(response.status).toBe(200);
 

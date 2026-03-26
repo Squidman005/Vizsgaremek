@@ -153,10 +153,6 @@ class UserRepository
             )
         );
 
-        // if (updateData.password) {
-        //     updateData.password = authUtils.hashPassword(updateData.password);
-        // }
-
         if (Object.keys(updateData).length === 0) {
             throw new BadRequestError("No valid fields to update");
         }

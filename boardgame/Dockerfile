@@ -1,12 +1,16 @@
-FROM node:22-alpine
-
+FROM node:22-alpine AS builder
 WORKDIR /app
-
-COPY boardgame/package*.json ./
+COPY package*.json ./
 RUN npm install
+COPY . .
+RUN npm run build
 
-COPY boardgame/ ./
+FROM node:22-alpine
+WORKDIR /app
+COPY --from=builder /app ./
 
-EXPOSE 5173
+ENV HOST=0.0.0.0
+ENV PORT=3000
 
-CMD ["npm", "run", "dev", "--", "--host", "0.0.0.0", "--port", "5173"]
+EXPOSE 3000
+CMD ["npm", "run", "serve", "--", "--host", "0.0.0.0", "--port", "3000"]

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1774431504828" clover="3.2.0">
-  <project timestamp="1774431504828" name="All files">
-    <metrics statements="485" coveredstatements="319" conditionals="183" coveredconditionals="62" methods="84" coveredmethods="55" elements="752" coveredelements="436" complexity="0" loc="485" ncloc="485" packages="9" files="27" classes="27"/>
+<coverage generated="1774542720067" clover="3.2.0">
+  <project timestamp="1774542720067" name="All files">
+    <metrics statements="496" coveredstatements="319" conditionals="183" coveredconditionals="60" methods="87" coveredmethods="55" elements="766" coveredelements="434" complexity="0" loc="496" ncloc="496" packages="9" files="27" classes="27"/>
     <package name="users">
       <metrics statements="20" coveredstatements="20" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-      <file name="app.js" path="C:\Users\zsidakovits.balint\Desktop\Vizsgaremek\users\app.js">
+      <file name="app.js" path="C:\Users\squid\Desktop\Suli\13. Osztály\Vizsgaremek\users\app.js">
         <metrics statements="20" coveredstatements="20" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -29,8 +29,8 @@
       </file>
     </package>
     <package name="users.api.controllers">
-      <metrics statements="153" coveredstatements="80" conditionals="44" coveredconditionals="12" methods="20" coveredmethods="10"/>
-      <file name="authController.js" path="C:\Users\zsidakovits.balint\Desktop\Vizsgaremek\users\api\controllers\authController.js">
+      <metrics statements="159" coveredstatements="81" conditionals="44" coveredconditionals="11" methods="21" coveredmethods="10"/>
+      <file name="authController.js" path="C:\Users\squid\Desktop\Suli\13. Osztály\Vizsgaremek\users\api\controllers\authController.js">
         <metrics statements="40" coveredstatements="20" conditionals="18" coveredconditionals="7" methods="4" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -73,8 +73,8 @@
         <line num="78" count="0" type="stmt"/>
         <line num="80" count="0" type="stmt"/>
       </file>
-      <file name="scoreController.js" path="C:\Users\zsidakovits.balint\Desktop\Vizsgaremek\users\api\controllers\scoreController.js">
-        <metrics statements="45" coveredstatements="35" conditionals="6" coveredconditionals="4" methods="7" coveredmethods="6"/>
+      <file name="scoreController.js" path="C:\Users\squid\Desktop\Suli\13. Osztály\Vizsgaremek\users\api\controllers\scoreController.js">
+        <metrics statements="51" coveredstatements="36" conditionals="6" coveredconditionals="3" methods="8" coveredmethods="6"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -102,26 +102,32 @@
         <line num="38" count="1" type="stmt"/>
         <line num="40" count="0" type="stmt"/>
         <line num="44" count="1" type="stmt"/>
-        <line num="45" count="2" type="cond" truecount="1" falsecount="1"/>
-        <line num="46" count="2" type="stmt"/>
-        <line num="47" count="2" type="stmt"/>
-        <line num="48" count="1" type="stmt"/>
-        <line num="50" count="1" type="stmt"/>
+        <line num="45" count="0" type="stmt"/>
+        <line num="46" count="0" type="stmt"/>
+        <line num="47" count="0" type="stmt"/>
+        <line num="48" count="0" type="stmt"/>
+        <line num="50" count="0" type="stmt"/>
         <line num="54" count="1" type="stmt"/>
-        <line num="55" count="1" type="cond" truecount="2" falsecount="0"/>
-        <line num="56" count="1" type="cond" truecount="1" falsecount="1"/>
-        <line num="57" count="1" type="stmt"/>
+        <line num="55" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="56" count="2" type="stmt"/>
+        <line num="57" count="2" type="stmt"/>
         <line num="58" count="1" type="stmt"/>
-        <line num="59" count="1" type="stmt"/>
-        <line num="61" count="0" type="stmt"/>
-        <line num="65" count="1" type="stmt"/>
-        <line num="66" count="1" type="stmt"/>
+        <line num="60" count="1" type="stmt"/>
+        <line num="64" count="1" type="stmt"/>
+        <line num="65" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="66" count="1" type="cond" truecount="1" falsecount="1"/>
         <line num="67" count="1" type="stmt"/>
         <line num="68" count="1" type="stmt"/>
         <line num="69" count="1" type="stmt"/>
         <line num="71" count="0" type="stmt"/>
+        <line num="75" count="1" type="stmt"/>
+        <line num="76" count="1" type="stmt"/>
+        <line num="77" count="1" type="stmt"/>
+        <line num="78" count="1" type="stmt"/>
+        <line num="79" count="1" type="stmt"/>
+        <line num="81" count="0" type="stmt"/>
       </file>
-      <file name="userController.js" path="C:\Users\zsidakovits.balint\Desktop\Vizsgaremek\users\api\controllers\userController.js">
+      <file name="userController.js" path="C:\Users\squid\Desktop\Suli\13. Osztály\Vizsgaremek\users\api\controllers\userController.js">
         <metrics statements="68" coveredstatements="25" conditionals="20" coveredconditionals="1" methods="9" coveredmethods="3"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -195,7 +201,7 @@
     </package>
     <package name="users.api.errors">
       <metrics statements="23" coveredstatements="20" conditionals="22" coveredconditionals="8" methods="6" coveredmethods="3"/>
-      <file name="AppError.js" path="C:\Users\zsidakovits.balint\Desktop\Vizsgaremek\users\api\errors\AppError.js">
+      <file name="AppError.js" path="C:\Users\squid\Desktop\Suli\13. Osztály\Vizsgaremek\users\api\errors\AppError.js">
         <metrics statements="7" coveredstatements="7" conditionals="12" coveredconditionals="6" methods="1" coveredmethods="1"/>
         <line num="6" count="3" type="stmt"/>
         <line num="8" count="3" type="stmt"/>
@@ -205,44 +211,44 @@
         <line num="16" count="3" type="cond" truecount="1" falsecount="1"/>
         <line num="20" count="1" type="stmt"/>
       </file>
-      <file name="BadRequestError.js" path="C:\Users\zsidakovits.balint\Desktop\Vizsgaremek\users\api\errors\BadRequestError.js">
+      <file name="BadRequestError.js" path="C:\Users\squid\Desktop\Suli\13. Osztály\Vizsgaremek\users\api\errors\BadRequestError.js">
         <metrics statements="3" coveredstatements="3" conditionals="2" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="7" count="1" type="stmt"/>
         <line num="11" count="1" type="stmt"/>
       </file>
-      <file name="DbError.js" path="C:\Users\zsidakovits.balint\Desktop\Vizsgaremek\users\api\errors\DbError.js">
+      <file name="DbError.js" path="C:\Users\squid\Desktop\Suli\13. Osztály\Vizsgaremek\users\api\errors\DbError.js">
         <metrics statements="3" coveredstatements="2" conditionals="2" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="7" count="0" type="stmt"/>
         <line num="11" count="1" type="stmt"/>
       </file>
-      <file name="NotFoundError.js" path="C:\Users\zsidakovits.balint\Desktop\Vizsgaremek\users\api\errors\NotFoundError.js">
+      <file name="NotFoundError.js" path="C:\Users\squid\Desktop\Suli\13. Osztály\Vizsgaremek\users\api\errors\NotFoundError.js">
         <metrics statements="3" coveredstatements="2" conditionals="2" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="7" count="0" type="stmt"/>
         <line num="11" count="1" type="stmt"/>
       </file>
-      <file name="UnauthorizedError.js" path="C:\Users\zsidakovits.balint\Desktop\Vizsgaremek\users\api\errors\UnauthorizedError.js">
+      <file name="UnauthorizedError.js" path="C:\Users\squid\Desktop\Suli\13. Osztály\Vizsgaremek\users\api\errors\UnauthorizedError.js">
         <metrics statements="3" coveredstatements="3" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="7" count="2" type="stmt"/>
         <line num="11" count="1" type="stmt"/>
       </file>
-      <file name="ValidationError.js" path="C:\Users\zsidakovits.balint\Desktop\Vizsgaremek\users\api\errors\ValidationError.js">
+      <file name="ValidationError.js" path="C:\Users\squid\Desktop\Suli\13. Osztály\Vizsgaremek\users\api\errors\ValidationError.js">
         <metrics statements="3" coveredstatements="2" conditionals="2" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="7" count="0" type="stmt"/>
         <line num="11" count="1" type="stmt"/>
       </file>
-      <file name="index.js" path="C:\Users\zsidakovits.balint\Desktop\Vizsgaremek\users\api\errors\index.js">
+      <file name="index.js" path="C:\Users\squid\Desktop\Suli\13. Osztály\Vizsgaremek\users\api\errors\index.js">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
       </file>
     </package>
     <package name="users.api.middlewares">
       <metrics statements="21" coveredstatements="18" conditionals="10" coveredconditionals="7" methods="4" coveredmethods="3"/>
-      <file name="authMiddleware.js" path="C:\Users\zsidakovits.balint\Desktop\Vizsgaremek\users\api\middlewares\authMiddleware.js">
+      <file name="authMiddleware.js" path="C:\Users\squid\Desktop\Suli\13. Osztály\Vizsgaremek\users\api\middlewares\authMiddleware.js">
         <metrics statements="12" coveredstatements="11" conditionals="6" coveredconditionals="5" methods="2" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -257,7 +263,7 @@
         <line num="25" count="2" type="cond" truecount="2" falsecount="0"/>
         <line num="27" count="1" type="stmt"/>
       </file>
-      <file name="errorHandler.js" path="C:\Users\zsidakovits.balint\Desktop\Vizsgaremek\users\api\middlewares\errorHandler.js">
+      <file name="errorHandler.js" path="C:\Users\squid\Desktop\Suli\13. Osztály\Vizsgaremek\users\api\middlewares\errorHandler.js">
         <metrics statements="9" coveredstatements="7" conditionals="4" coveredconditionals="2" methods="2" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="5" count="0" type="stmt"/>
@@ -272,14 +278,14 @@
     </package>
     <package name="users.api.models">
       <metrics statements="16" coveredstatements="16" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
-      <file name="Score.js" path="C:\Users\zsidakovits.balint\Desktop\Vizsgaremek\users\api\models\Score.js">
+      <file name="Score.js" path="C:\Users\squid\Desktop\Suli\13. Osztály\Vizsgaremek\users\api\models\Score.js">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
         <line num="6" count="1" type="stmt"/>
         <line num="41" count="1" type="stmt"/>
       </file>
-      <file name="User.js" path="C:\Users\zsidakovits.balint\Desktop\Vizsgaremek\users\api\models\User.js">
+      <file name="User.js" path="C:\Users\squid\Desktop\Suli\13. Osztály\Vizsgaremek\users\api\models\User.js">
         <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -288,7 +294,7 @@
         <line num="38" count="4" type="stmt"/>
         <line num="70" count="1" type="stmt"/>
       </file>
-      <file name="index.js" path="C:\Users\zsidakovits.balint\Desktop\Vizsgaremek\users\api\models\index.js">
+      <file name="index.js" path="C:\Users\squid\Desktop\Suli\13. Osztály\Vizsgaremek\users\api\models\index.js">
         <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -299,9 +305,9 @@
       </file>
     </package>
     <package name="users.api.repositories">
-      <metrics statements="109" coveredstatements="56" conditionals="31" coveredconditionals="6" methods="20" coveredmethods="14"/>
-      <file name="ScoreRepository.js" path="C:\Users\zsidakovits.balint\Desktop\Vizsgaremek\users\api\repositories\ScoreRepository.js">
-        <metrics statements="27" coveredstatements="18" conditionals="1" coveredconditionals="0" methods="8" coveredmethods="7"/>
+      <metrics statements="111" coveredstatements="54" conditionals="29" coveredconditionals="5" methods="21" coveredmethods="14"/>
+      <file name="ScoreRepository.js" path="C:\Users\squid\Desktop\Suli\13. Osztály\Vizsgaremek\users\api\repositories\ScoreRepository.js">
+        <metrics statements="31" coveredstatements="18" conditionals="1" coveredconditionals="0" methods="9" coveredmethods="7"/>
         <line num="1" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
         <line num="7" count="5" type="stmt"/>
@@ -319,19 +325,23 @@
         <line num="62" count="0" type="stmt"/>
         <line num="63" count="0" type="stmt"/>
         <line num="69" count="0" type="stmt"/>
-        <line num="76" count="1" type="stmt"/>
-        <line num="77" count="1" type="stmt"/>
+        <line num="71" count="0" type="stmt"/>
         <line num="79" count="0" type="stmt"/>
-        <line num="86" count="1" type="stmt"/>
-        <line num="87" count="1" type="stmt"/>
-        <line num="93" count="0" type="stmt"/>
-        <line num="100" count="1" type="stmt"/>
-        <line num="101" count="1" type="stmt"/>
-        <line num="107" count="0" type="stmt"/>
-        <line num="114" count="1" type="stmt"/>
+        <line num="80" count="0" type="stmt"/>
+        <line num="86" count="0" type="stmt"/>
+        <line num="93" count="1" type="stmt"/>
+        <line num="94" count="1" type="stmt"/>
+        <line num="96" count="0" type="stmt"/>
+        <line num="103" count="1" type="stmt"/>
+        <line num="104" count="1" type="stmt"/>
+        <line num="110" count="0" type="stmt"/>
+        <line num="117" count="1" type="stmt"/>
+        <line num="118" count="1" type="stmt"/>
+        <line num="124" count="0" type="stmt"/>
+        <line num="131" count="1" type="stmt"/>
       </file>
-      <file name="UserRepository.js" path="C:\Users\zsidakovits.balint\Desktop\Vizsgaremek\users\api\repositories\UserRepository.js">
-        <metrics statements="76" coveredstatements="32" conditionals="30" coveredconditionals="6" methods="11" coveredmethods="6"/>
+      <file name="UserRepository.js" path="C:\Users\squid\Desktop\Suli\13. Osztály\Vizsgaremek\users\api\repositories\UserRepository.js">
+        <metrics statements="74" coveredstatements="30" conditionals="28" coveredconditionals="5" methods="11" coveredmethods="6"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -371,45 +381,43 @@
         <line num="149" count="1" type="stmt"/>
         <line num="152" count="4" type="cond" truecount="2" falsecount="0"/>
         <line num="156" count="1" type="cond" truecount="1" falsecount="1"/>
-        <line num="157" count="1" type="stmt"/>
-        <line num="160" count="1" type="cond" truecount="1" falsecount="1"/>
-        <line num="161" count="0" type="stmt"/>
-        <line num="164" count="1" type="stmt"/>
-        <line num="168" count="1" type="cond" truecount="1" falsecount="1"/>
-        <line num="169" count="0" type="stmt"/>
-        <line num="172" count="1" type="stmt"/>
-        <line num="174" count="0" type="stmt"/>
-        <line num="183" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="184" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="186" count="0" type="stmt"/>
-        <line num="187" count="0" type="stmt"/>
-        <line num="192" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="193" count="0" type="stmt"/>
+        <line num="157" count="0" type="stmt"/>
+        <line num="160" count="1" type="stmt"/>
+        <line num="164" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="165" count="0" type="stmt"/>
+        <line num="168" count="1" type="stmt"/>
+        <line num="170" count="0" type="stmt"/>
+        <line num="179" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="180" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="182" count="0" type="stmt"/>
+        <line num="183" count="0" type="stmt"/>
+        <line num="188" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="189" count="0" type="stmt"/>
+        <line num="192" count="0" type="stmt"/>
         <line num="196" count="0" type="stmt"/>
-        <line num="200" count="0" type="stmt"/>
-        <line num="202" count="0" type="stmt"/>
-        <line num="210" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="211" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="213" count="0" type="stmt"/>
-        <line num="214" count="0" type="stmt"/>
-        <line num="216" count="0" type="stmt"/>
-        <line num="221" count="0" type="stmt"/>
-        <line num="226" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="227" count="0" type="stmt"/>
+        <line num="198" count="0" type="stmt"/>
+        <line num="206" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="207" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="209" count="0" type="stmt"/>
+        <line num="210" count="0" type="stmt"/>
+        <line num="212" count="0" type="stmt"/>
+        <line num="217" count="0" type="stmt"/>
+        <line num="222" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="223" count="0" type="stmt"/>
+        <line num="226" count="0" type="stmt"/>
         <line num="230" count="0" type="stmt"/>
-        <line num="234" count="0" type="stmt"/>
-        <line num="236" count="0" type="stmt"/>
-        <line num="244" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="245" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="247" count="0" type="stmt"/>
-        <line num="248" count="0" type="stmt"/>
-        <line num="253" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="254" count="0" type="stmt"/>
-        <line num="257" count="0" type="stmt"/>
-        <line num="259" count="0" type="stmt"/>
-        <line num="265" count="1" type="stmt"/>
+        <line num="232" count="0" type="stmt"/>
+        <line num="240" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="241" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="243" count="0" type="stmt"/>
+        <line num="244" count="0" type="stmt"/>
+        <line num="249" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="250" count="0" type="stmt"/>
+        <line num="253" count="0" type="stmt"/>
+        <line num="255" count="0" type="stmt"/>
+        <line num="261" count="1" type="stmt"/>
       </file>
-      <file name="index.js" path="C:\Users\zsidakovits.balint\Desktop\Vizsgaremek\users\api\repositories\index.js">
+      <file name="index.js" path="C:\Users\squid\Desktop\Suli\13. Osztály\Vizsgaremek\users\api\repositories\index.js">
         <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -420,8 +428,8 @@
       </file>
     </package>
     <package name="users.api.routes">
-      <metrics statements="46" coveredstatements="46" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
-      <file name="authRoutes.js" path="C:\Users\zsidakovits.balint\Desktop\Vizsgaremek\users\api\routes\authRoutes.js">
+      <metrics statements="47" coveredstatements="47" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
+      <file name="authRoutes.js" path="C:\Users\squid\Desktop\Suli\13. Osztály\Vizsgaremek\users\api\routes\authRoutes.js">
         <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -433,8 +441,8 @@
         <line num="15" count="1" type="stmt"/>
         <line num="17" count="1" type="stmt"/>
       </file>
-      <file name="scoreRoutes.js" path="C:\Users\zsidakovits.balint\Desktop\Vizsgaremek\users\api\routes\scoreRoutes.js">
-        <metrics statements="20" coveredstatements="20" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+      <file name="scoreRoutes.js" path="C:\Users\squid\Desktop\Suli\13. Osztály\Vizsgaremek\users\api\routes\scoreRoutes.js">
+        <metrics statements="21" coveredstatements="21" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
         <line num="1" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
         <line num="5" count="1" type="stmt"/>
@@ -447,25 +455,27 @@
         <line num="22" count="1" type="stmt"/>
         <line num="24" count="1" type="stmt"/>
         <line num="27" count="1" type="stmt"/>
-        <line num="30" count="1" type="stmt"/>
-        <line num="32" count="1" type="stmt"/>
-        <line num="34" count="1" type="stmt"/>
-        <line num="36" count="1" type="stmt"/>
-        <line num="38" count="1" type="stmt"/>
-        <line num="40" count="1" type="stmt"/>
-        <line num="43" count="1" type="stmt"/>
-        <line num="45" count="1" type="stmt"/>
+        <line num="29" count="1" type="stmt"/>
+        <line num="31" count="1" type="stmt"/>
+        <line num="33" count="1" type="stmt"/>
+        <line num="35" count="1" type="stmt"/>
+        <line num="37" count="1" type="stmt"/>
+        <line num="39" count="2" type="stmt"/>
+        <line num="41" count="2" type="stmt"/>
+        <line num="44" count="1" type="stmt"/>
+        <line num="46" count="1" type="stmt"/>
       </file>
-      <file name="userRoutes.js" path="C:\Users\zsidakovits.balint\Desktop\Vizsgaremek\users\api\routes\userRoutes.js">
+      <file name="userRoutes.js" path="C:\Users\squid\Desktop\Suli\13. Osztály\Vizsgaremek\users\api\routes\userRoutes.js">
         <metrics statements="17" coveredstatements="17" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
         <line num="5" count="1" type="stmt"/>
         <line num="7" count="1" type="stmt"/>
         <line num="9" count="1" type="stmt"/>
-        <line num="11" count="1" type="stmt"/>
-        <line num="12" count="2" type="stmt"/>
-        <line num="13" count="2" type="stmt"/>
-        <line num="15" count="1" type="stmt"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="11" count="2" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
         <line num="16" count="1" type="stmt"/>
         <line num="18" count="1" type="stmt"/>
         <line num="20" count="1" type="stmt"/>
@@ -474,13 +484,12 @@
         <line num="26" count="1" type="stmt"/>
         <line num="28" count="1" type="stmt"/>
         <line num="30" count="1" type="stmt"/>
-        <line num="32" count="1" type="stmt"/>
       </file>
     </package>
     <package name="users.api.services">
-      <metrics statements="77" coveredstatements="48" conditionals="76" coveredconditionals="29" methods="19" coveredmethods="13"/>
-      <file name="ScoreService.js" path="C:\Users\zsidakovits.balint\Desktop\Vizsgaremek\users\api\services\ScoreService.js">
-        <metrics statements="27" coveredstatements="23" conditionals="32" coveredconditionals="16" methods="8" coveredmethods="7"/>
+      <metrics statements="79" coveredstatements="48" conditionals="78" coveredconditionals="29" methods="20" coveredmethods="13"/>
+      <file name="ScoreService.js" path="C:\Users\squid\Desktop\Suli\13. Osztály\Vizsgaremek\users\api\services\ScoreService.js">
+        <metrics statements="29" coveredstatements="23" conditionals="34" coveredconditionals="16" methods="9" coveredmethods="7"/>
         <line num="1" count="1" type="stmt"/>
         <line num="5" count="3" type="stmt"/>
         <line num="9" count="1" type="stmt"/>
@@ -488,28 +497,30 @@
         <line num="14" count="1" type="stmt"/>
         <line num="18" count="1" type="cond" truecount="1" falsecount="1"/>
         <line num="19" count="1" type="stmt"/>
-        <line num="24" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="25" count="0" type="stmt"/>
-        <line num="26" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="27" count="0" type="stmt"/>
-        <line num="31" count="2" type="cond" truecount="1" falsecount="1"/>
-        <line num="32" count="2" type="cond" truecount="1" falsecount="1"/>
-        <line num="33" count="2" type="cond" truecount="1" falsecount="1"/>
-        <line num="34" count="2" type="cond" truecount="2" falsecount="0"/>
-        <line num="35" count="1" type="stmt"/>
-        <line num="39" count="1" type="cond" truecount="1" falsecount="1"/>
-        <line num="40" count="1" type="cond" truecount="3" falsecount="1"/>
-        <line num="41" count="1" type="cond" truecount="1" falsecount="1"/>
-        <line num="42" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="23" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="28" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="29" count="0" type="stmt"/>
+        <line num="30" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="31" count="0" type="stmt"/>
+        <line num="35" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="36" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="37" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="38" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="39" count="1" type="stmt"/>
         <line num="43" count="1" type="cond" truecount="1" falsecount="1"/>
-        <line num="44" count="1" type="stmt"/>
-        <line num="48" count="1" type="cond" truecount="1" falsecount="1"/>
-        <line num="49" count="1" type="stmt"/>
-        <line num="50" count="1" type="cond" truecount="1" falsecount="1"/>
-        <line num="51" count="1" type="stmt"/>
+        <line num="44" count="1" type="cond" truecount="3" falsecount="1"/>
+        <line num="45" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="46" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="47" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="48" count="1" type="stmt"/>
+        <line num="52" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="53" count="1" type="stmt"/>
+        <line num="54" count="1" type="cond" truecount="1" falsecount="1"/>
         <line num="55" count="1" type="stmt"/>
+        <line num="59" count="1" type="stmt"/>
       </file>
-      <file name="UserService.js" path="C:\Users\zsidakovits.balint\Desktop\Vizsgaremek\users\api\services\UserService.js">
+      <file name="UserService.js" path="C:\Users\squid\Desktop\Suli\13. Osztály\Vizsgaremek\users\api\services\UserService.js">
         <metrics statements="44" coveredstatements="19" conditionals="44" coveredconditionals="13" methods="10" coveredmethods="5"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -538,25 +549,25 @@
         <line num="82" count="0" type="stmt"/>
         <line num="87" count="1" type="cond" truecount="3" falsecount="1"/>
         <line num="88" count="0" type="stmt"/>
-        <line num="94" count="1" type="stmt"/>
+        <line num="93" count="1" type="stmt"/>
+        <line num="98" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="99" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="100" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="102" count="0" type="stmt"/>
+        <line num="101" count="0" type="stmt"/>
+        <line num="105" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="106" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="107" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="109" count="0" type="stmt"/>
-        <line num="113" count="1" type="cond" truecount="1" falsecount="1"/>
-        <line num="114" count="1" type="stmt"/>
+        <line num="108" count="0" type="stmt"/>
+        <line num="112" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="113" count="1" type="stmt"/>
+        <line num="117" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="118" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="119" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="121" count="0" type="stmt"/>
-        <line num="123" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="124" count="0" type="stmt"/>
-        <line num="127" count="0" type="stmt"/>
-        <line num="133" count="0" type="stmt"/>
-        <line num="137" count="1" type="stmt"/>
+        <line num="120" count="0" type="stmt"/>
+        <line num="122" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="123" count="0" type="stmt"/>
+        <line num="126" count="0" type="stmt"/>
+        <line num="132" count="0" type="stmt"/>
+        <line num="136" count="1" type="stmt"/>
       </file>
-      <file name="index.js" path="C:\Users\zsidakovits.balint\Desktop\Vizsgaremek\users\api\services\index.js">
+      <file name="index.js" path="C:\Users\squid\Desktop\Suli\13. Osztály\Vizsgaremek\users\api\services\index.js">
         <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -568,7 +579,7 @@
     </package>
     <package name="users.api.utilities">
       <metrics statements="20" coveredstatements="15" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="4"/>
-      <file name="authUtils.js" path="C:\Users\zsidakovits.balint\Desktop\Vizsgaremek\users\api\utilities\authUtils.js">
+      <file name="authUtils.js" path="C:\Users\squid\Desktop\Suli\13. Osztály\Vizsgaremek\users\api\utilities\authUtils.js">
         <metrics statements="15" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="4"/>
         <line num="1" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -584,9 +595,9 @@
         <line num="31" count="2" type="stmt"/>
         <line num="35" count="0" type="stmt"/>
         <line num="39" count="1" type="stmt"/>
-        <line num="41" count="5" type="stmt"/>
+        <line num="41" count="4" type="stmt"/>
       </file>
-      <file name="emailUtils.js" path="C:\Users\zsidakovits.balint\Desktop\Vizsgaremek\users\api\utilities\emailUtils.js">
+      <file name="emailUtils.js" path="C:\Users\squid\Desktop\Suli\13. Osztály\Vizsgaremek\users\api\utilities\emailUtils.js">
         <metrics statements="5" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="4" count="0" type="stmt"/>
